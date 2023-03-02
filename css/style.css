@@ -28,7 +28,7 @@
     line-height: 51px;    
 }
 
-.logo__text_
+.logo__text
 {
     font-family: 'Oxygen';
     font-size: 17px;
@@ -79,40 +79,81 @@
     line-height: 30px;     
 }
 
-.major-posts__text
+.major-post-1__text
 {
     font-size: 14px;
     line-height: 25px;    
 }
 
-.major-post-1__info
+.major-post-1__info-cover
 {
     font-size: 12px;
 }
-.info__author
+
+.info-cover__author
 {
     line-height: 35px;    
 }
 
-.info__date
+.info-cover__date
 {
     line-height: 35px;
 }
 
-.minor__block_text_bold
+.featured-posts__major-post-2
+{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;    
+}
+
+.major-post-2__text_title
 {
     font-family: 'Lora';
+    font-size: 27px;
+    line-height: 30px;       
+}
+
+.major_post-2__info-cover
+{
+    font-size: 12px;    
+}
+ /* Next big block */
+.most-recent
+{
+    font-family: 'Oxygen';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 400;    
+}
+
+.most-recent__title
+{
+    font-size: 20px;
+    line-height: 27px;
+}
+ 
+.most-recent__minor-post-1
+{
+    font-style: normal;
+    font-weight: 400;     
+}
+
+.minor-post-1
+{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;   
+}
+
+.minor-post-1__text_title
+{
+    font-family: 'Lora';
     font-size: 16px;
     line-height: 21px;    
 }
 
-.minor__block_text
+.minor-post-1__text
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
     font-size: 13px;
     line-height: 19px;
 }
