@@ -1,33 +1,36 @@
+.header
+{
+    font-weight: 400;
+    font-style: normal;  
+}
+
 .header__logo
 {
     font: 26px/26px 'Lora';
-    font-style: normal;
-    font-weight: 400;
 }
 
 .header__links
 {
     font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
     font-size: 12px;
     line-height: 20px;
 }
 
-.logo__text
+.logo
 {
-    font-family: 'Lora';
     font-style: normal;
     font-weight: 400;
+}
+.logo__text_title
+{
+    font-family: 'Lora';
     font-size: 50px;
     line-height: 51px;    
 }
 
-.logo__text_footer
+.logo__text_
 {
     font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
     font-size: 17px;
     line-height: 20px;
 }
@@ -35,13 +38,11 @@
 .logo__text_button
 {
     font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
     font-size: 13px;
     line-height: 20px;
 }
 
-.logo__links
+.huge-inks
 {
     font-family: 'Lora';
     font-style: normal;
@@ -50,57 +51,51 @@
     line-height: 20px;   
 }
 
-.main__header
+.feautured-posts
 {
     font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+}
+.feautured-posts__header
+{
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 27px;
 }
 
-.main__block_text_bold
+.featured-posts__major-post-1
 {
-    font-family: 'Lora';
+    font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
+}
+
+.major-post-1__text_title
+{
+    font-family: 'Lora';
     font-size: 27px;
     line-height: 30px;     
 }
 
-.main__block_text
+.major-posts__text
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 25px;    
 }
 
-.main__block_text_by_Vogels
+.major-post-1__info
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
     font-size: 12px;
+}
+.info__author
+{
     line-height: 35px;    
 }
 
-.main__block_text_by_Wong
+.info__date
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 35px;
-}
-
-.main__block_text_calendar
-{
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
     line-height: 35px;
 }
 
