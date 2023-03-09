@@ -1,42 +1,67 @@
+.header
+{
+    font-weight: 400;
+    font-style: normal;  
+}
+
 .header__logo
 {
     font: 26px/26px 'Lora';
-    font-style: normal;
-    font-weight: 400;
 }
 
 .header__links
 {
     font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
     font-size: 12px;
     line-height: 20px;
 }
 
-.main__header_bold
+/* entry */
+.entry
 {
-    font-family: 'Lora';
     font-style: normal;
     font-weight: 400;
+}
+
+.entry__title
+{
+    font-family: 'Lora';
     font-size: 50px;
     line-height: 51px;
 }
 
-.main__header
+.entry__subtitle
 {
     font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
     font-size: 17px;
     line-height: 20px;
 }
 
-.content-text
+/* article */
+.article
 {
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
+}
+
+/* footer */
+.footer
+{
+    font-weight: 400;
+    font-style: normal;  
+}
+
+.footer__logo
+{
+    font: 26px/26px 'Lora';
+}
+
+.footer__links
+{
+    font-family: 'Oxygen';
+    font-size: 12px;
+    line-height: 20px;
 }

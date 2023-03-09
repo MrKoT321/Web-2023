@@ -21,28 +21,28 @@
     font-style: normal;
     font-weight: 400;
 }
-.logo__text_title
+.logo__title
 {
     font-family: 'Lora';
     font-size: 50px;
     line-height: 51px;    
 }
 
-.logo__text
+.logo__subtitle
 {
     font-family: 'Oxygen';
     font-size: 17px;
     line-height: 20px;
 }
 
-.logo__text_button
+.logo__button
 {
     font-family: 'Oxygen';
     font-size: 13px;
     line-height: 20px;
 }
 
-.huge-inks
+.nav-inks
 {
     font-family: 'Lora';
     font-style: normal;
@@ -50,13 +50,14 @@
     font-size: 14px;
     line-height: 20px;   
 }
-
+/* feautured posts */
 .feautured-posts
 {
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
 }
+
 .feautured-posts__header
 {
     font-style: normal;
@@ -65,27 +66,27 @@
     line-height: 27px;
 }
 
-.featured-posts__major-post-1
+.featured-posts__major-post
 {
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
 }
 
-.major-post-1__text_title
+.major-post__title
 {
     font-family: 'Lora';
     font-size: 27px;
     line-height: 30px;     
 }
 
-.major-post-1__text
+.major-post__subtitle
 {
     font-size: 14px;
     line-height: 25px;    
 }
 
-.major-post-1__info-cover
+.major-post__info-cover
 {
     font-size: 12px;
 }
@@ -100,25 +101,7 @@
     line-height: 35px;
 }
 
-.featured-posts__major-post-2
-{
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;    
-}
-
-.major-post-2__text_title
-{
-    font-family: 'Lora';
-    font-size: 27px;
-    line-height: 30px;       
-}
-
-.major_post-2__info-cover
-{
-    font-size: 12px;    
-}
- /* Next big block */
+ /* most recent */
 .most-recent
 {
     font-family: 'Oxygen';
@@ -131,29 +114,57 @@
     font-size: 20px;
     line-height: 27px;
 }
- 
-.most-recent__minor-post-1
+
+/* post */
+.most-recent__minor-post
 {
+    font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;     
 }
 
-.minor-post-1
-{
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;   
-}
-
-.minor-post-1__text_title
+.minor-post__text_title
 {
     font-family: 'Lora';
     font-size: 16px;
     line-height: 21px;    
 }
 
-.minor-post-1__text
+.minor-post__text
 {
     font-size: 13px;
     line-height: 19px;
+}
+
+.minor-post__info
+{
+    line-height: 35px;   
+}
+
+.info__author
+{
+    font-size: 11px; 
+}
+.info__date
+{
+    font-size: 12px;     
+}
+
+/* footer */
+.footer
+{
+    font-weight: 400;
+    font-style: normal;  
+}
+
+.footer__logo
+{
+    font: 26px/26px 'Lora';
+}
+
+.footer__links
+{
+    font-family: 'Oxygen';
+    font-size: 12px;
+    line-height: 20px;
 }
