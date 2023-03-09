@@ -1,21 +1,23 @@
+/* heading */
 .header
 {
     font-weight: 400;
     font-style: normal;  
 }
 
-.header__logo
+.heading__logo
 {
     font: 26px/26px 'Lora';
 }
 
-.header__links
+.heading__links
 {
     font-family: 'Oxygen';
     font-size: 12px;
     line-height: 20px;
 }
 
+/* logo */
 .logo
 {
     font-style: normal;
@@ -50,6 +52,7 @@
     font-size: 14px;
     line-height: 20px;   
 }
+
 /* feautured posts */
 .feautured-posts
 {
@@ -58,7 +61,7 @@
     font-weight: 400;
 }
 
-.feautured-posts__header
+.feautured-posts__heading
 {
     font-style: normal;
     font-weight: 400;
@@ -66,103 +69,105 @@
     line-height: 27px;
 }
 
-.featured-posts__major-post
+/* feautured post */
+.feautured-post
 {
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
 }
 
-.major-post__title
+.feautured-post__title
 {
     font-family: 'Lora';
     font-size: 27px;
     line-height: 30px;     
 }
 
-.major-post__subtitle
+.feautured-post__subtitle
 {
     font-size: 14px;
     line-height: 25px;    
 }
 
-.major-post__info-cover
+/* feautured post info */
+.feautured-post-info
 {
     font-size: 12px;
 }
 
-.info-cover__author
+.feautured-post-info__author
 {
     line-height: 35px;    
 }
 
-.info-cover__date
+.feautured-post-info__date
 {
     line-height: 35px;
 }
 
- /* most recent */
-.most-recent
+ /* most recent posts */
+.most-recent-posts
 {
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;    
 }
 
-.most-recent__title
+.most-recent-posts__title
 {
     font-size: 20px;
     line-height: 27px;
 }
 
-/* post */
-.most-recent__minor-post
+/* most recent post */
+.most-recent-post
 {
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;     
 }
 
-.minor-post__text_title
+.most-recent-post__title
 {
     font-family: 'Lora';
     font-size: 16px;
     line-height: 21px;    
 }
 
-.minor-post__text
+.most-recent-post__subtitle
 {
     font-size: 13px;
     line-height: 19px;
 }
 
-.minor-post__info
+.most-recent-post-info
 {
     line-height: 35px;   
 }
 
-.info__author
+.most-recent-post-info__author
 {
     font-size: 11px; 
 }
-.info__date
+.most-recent-post-info__date
 {
     font-size: 12px;     
 }
 
-/* footer */
-.footer
+/* basement */
+.basement
 {
     font-weight: 400;
     font-style: normal;  
 }
 
-.footer__logo
+.basement__logo
 {
     font: 26px/26px 'Lora';
 }
 
-.footer__links
+.basement__links
 {
     font-family: 'Oxygen';
     font-size: 12px;
