@@ -1,11 +1,11 @@
 /* heading */
-.header
+.heading
 {
     font-weight: 400;
     font-style: normal;  
 }
 
-.heading__logo
+.heading__title
 {
     font: 26px/26px 'Lora';
 }
@@ -162,7 +162,7 @@
     font-style: normal;  
 }
 
-.basement__logo
+.basement__title
 {
     font: 26px/26px 'Lora';
 }
