@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Blog</title>
+  <link href="../static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="heading">
+    <span class="heading__title">Escape.</span>
+    <nav class="heading__links">
+      <a href="#" class="heading__link">HOME</a>
+      <a href="#" class="heading__link">CATEGORIES</a>
+      <a href="#" class="heading__link">ABOUT</a>
+      <a href="#" class="heading__link">CONTACT</a>
+    </nav>
+  </header>
+  <div class="logo">
+    <h1 class="logo__title">{{ .Title }}</h1>
+    <span class="logo__subtitle">{{ .Subtitle }}</span>
+    <button class="logo__button">View Latest Posts</button>
+  </div>
+  <div class="nav-links">
+    <a href="#" class="nav-link">Nature</a>
+    <a href="#" class="nav-link">Photography</a>
+    <a href="#" class="nav-link">Relaxation</a>
+    <a href="#" class="nav-link">Relaxation</a>
+    <a href="#" class="nav-link">Travel</a>
+    <a href="#" class="nav-link">Adventure</a>
+  </div>
+  <section class="feautured-posts">
+    <h2 class="feautured-posts__heading">Featured Posts</h2>
+    {{ range .FeaturedPosts }}
+    <div class="feautured-post {{ .ImgModifier }}">
+      <span class="feautured-post__title">{{ .Title }}</span>
+      <p class="feautured-post__subtitle">{{ .Subtitle }}</p>
+      <div class="feautured-post-info">
+        <span class="feautured-post-info__author {{ .AuthorModifier }}">{{ .Author }}</span>
+        <span class="feautured-post-info__date">{{ .PublishDate }}</span>
+      </div>
+    </div>
+    {{ end }}
+  </section>
+  <section class="most-recent-posts">
+    <h2 class="most-recent-posts__title">Most Recent</h2>
+    {{ range .MostRecentPosts }}
+    <div class="most-recent-post">
+      <img src="{{ .ImgModifier }}" class="most-cecent-post__img">
+      <span class="most-recent-post__title">{{ .Title }}</span>
+      <p class="most-recent-post__subtitle">{{ .Subtitle }}</p>
+      <div class="most-recent-post-info">
+        <span class="most-recent-post-info__author {{ .AuthorModifier }}">{{ .Author }}</span>
+        <span class="most-recent-post-info__date">{{ .PublishDate }}</span>
+      </div>
+    </div>
+    {{ end }}
+  </section>
+  <div class="site-footer">
+    <form class="feedback">
+      <span class="feedback__title">Stay in Touch</span>
+      <section class="email-form">
+        <input class="email-form__note" type="text" placeholder="Enter your email adress">
+        <input class="email-form__buttom" type="submit" value="Submit">
+      </section>
+    </form>
+    <div class="basement">
+      <span class="basement__title">Escape.</span>
+      <nav class="basement__links">
+        <a href="#" class="basement__link">HOME</a>
+        <a href="#" class="basement__link">CATEGORIES</a>
+        <a href="#" class="basement__link">ABOUT</a>
+        <a href="#" class="basement__link">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,44 +1,38 @@
-*
+body
 {
     margin: 0;
-    padding: 0;
-}
-
-p
-{
-    margin-top: 10px; 
-    margin-bottom: 20px;
 }
 
 .heading
 {
+    width: 100%;
     position: absolute;
-    height: 70px;
+    padding-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     font-weight: 400;
     font-style: normal;
     color: rgba(46, 46, 46, 1);
-    width: 100%; 
 }
 
 .heading__title
 {
-    padding: 0 20px;
+    margin-left: 17.36%;
     font: 26px/26px 'Lora';
 }
 
 .heading__links
 {
+    margin-right: 17.36%;
     display: flex;
     font-family: 'Oxygen';
     flex-wrap: wrap;
+    gap: 40px;
 }
 
 .heading__link
 {
-    padding-right: 40px;
     font-size: 12px;
     line-height: 20px;
     text-decoration: none;
@@ -62,7 +56,7 @@ p
     font-size: 50px;
     line-height: 51px;
     letter-spacing: 2px;
-    padding-bottom: 20px;
+    margin: 0 0 20px;
     color: rgba(46, 46, 46, 1);
 }
 
@@ -76,7 +70,7 @@ p
 
 .logo-img
 {
-    background: url("E:/Metateh/Web-2023/images/logo2.png") no-repeat;
+    background: url("../img/logo2.png") no-repeat;
     height: 534px;
     width: 100%;
     background-size: cover;
@@ -85,7 +79,11 @@ p
 /* article */
 .article-post
 {
-    padding: 140px 240px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 140px 17.36%;
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -93,25 +91,27 @@ p
     line-height: 35px;
     color: rgba(16, 19, 21, 1);
 }
+.article-post__text
+{
+    margin: 0;
+}
 
 /* site footer */
 .site-footer
 {
     position: relative;
 }
+
 /* email form */
 .feedback
-{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    background: url("E:/Metateh/Web-2023/images/submit-background.png") no-repeat;    
+{ 
     height: 378px;
     width: 100%;
+    background: url("../img/submit-background.png") no-repeat;    
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -119,9 +119,10 @@ p
 
 .feedback__title
 {
+    margin: 81px 0 38px;
+    text-align: center;
     font-size: 25px;
     line-height: 30px;
-    padding: 81px 0 38px;
     color: rgba(239, 239, 239, 1);
 }
 
@@ -130,21 +131,23 @@ p
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 50px;
 }
+
 .email-form__note
 {
-    width: 375px;
-    height: 100%;
+    width: 340px;   
+    height: 50px;
     border: 0;
-    padding-left: 35px;
-    margin-left: 20px;
+    padding: 0 0 0 35px;
+    text-align: justify;
+    margin: 0;
 }
 
 .email-form__buttom
 {
     width: 125px;
-    height: 100%;
+    height: 50px;
+    padding: 0;
     border: 0;
     background-color: rgba(255, 255, 255, 0.28);
     font-family: 'Roboto';
@@ -158,21 +161,21 @@ p
 /* basement */
 .basement
 {
+    width: 100%;
     position: absolute;
     top: 289px;
+    padding: 31.5px 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     background: rgba(35, 47, 56, 0.6);
-    width: 100%;
-    height: 89px;
     font-weight: 400;
     font-style: normal;  
 }
 
 .basement__title
 {
-    padding: 0 20px;
+    margin-left: 17.36%;
     font: 26px/26px 'Lora';
     color: rgba(255, 255, 255, 1);
 }
@@ -181,10 +184,12 @@ p
 {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
+    margin-right: 17.36%;
 }
 
 .basement__link
-{
+{        
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -192,7 +197,6 @@ p
     line-height: 26px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.6);
-    padding-right: 20px;
 }
 
 
