@@ -37,6 +37,16 @@ body
     color: white;
 }
 
+<<<<<<< HEAD
+=======
+.heading__link
+{
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none;
+    color: white;
+}
+>>>>>>> 2933629f94622529b12de65018a845ea35fee356
 /* logo */
 .logo
 {
@@ -108,6 +118,15 @@ body
     color: rgba(118, 128, 136, 1);
 }
 
+<<<<<<< HEAD
+=======
+.nav-link
+{
+    line-height: 20px;
+    text-decoration: none;
+    color: rgba(118, 128, 136, 1);
+}
+>>>>>>> 2933629f94622529b12de65018a845ea35fee356
 /* feautured posts */
 .feautured-posts
 {
@@ -120,6 +139,10 @@ body
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
+<<<<<<< HEAD
+=======
+    background-color: #F7F7F7;
+>>>>>>> 2933629f94622529b12de65018a845ea35fee356
 }
 
 /* feautured post */
@@ -129,8 +152,12 @@ body
     width: 460px;
     position: relative;
     display: flex;
+<<<<<<< HEAD
     flex-direction: column;
     text-decoration: none;    
+=======
+    flex-direction: column;    
+>>>>>>> 2933629f94622529b12de65018a845ea35fee356
     font-family: 'Oxygen';
     font-style: normal;
     font-weight: 400;
@@ -164,8 +191,13 @@ body
     margin-left: 4.347%;
     font-family: 'Lora';
     font-size: 27px;
+<<<<<<< HEAD
     line-height: 30px; 
     color: white; 
+=======
+    line-height: 30px;  
+    color: white;  
+>>>>>>> 2933629f94622529b12de65018a845ea35fee356
 }
 
 .feautured-post__subtitle
