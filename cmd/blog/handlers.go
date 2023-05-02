@@ -19,12 +19,15 @@ type indexPageData struct {
 }
 
 type postData struct {
-	Title       string `db:"title"`
-	Subtitle    string `db:"subtitle"`
-	ImgURL      string `db:"img_url"`
-	Content     string `db:"content"`
+	Title    string `db:"title"`
+	Subtitle string `db:"subtitle"`
+	ImgURL   string `db:"img_url"`
+	Content  string `db:"content"`
 }
 
+type adminPageData struct {
+	Title string
+}
 type featuredPostData struct {
 	PostID         string `db:"post_id"`
 	Title          string `db:"title"`
@@ -128,6 +131,28 @@ func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func admin(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		ts, err := template.ParseFiles("pages/admin.html")
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err)
+			return
+		}
+		data := adminPageData{
+			Title: "Let's do it together.",
+		}
+		err = ts.Execute(w, data)
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err)
+			return
+		}
+
+		log.Println("Request completed successfully")
+	}
+}
+
 func featuredPosts(db *sqlx.DB) ([]*featuredPostData, error) {
 	const query = `
 		SELECT
@@ -151,7 +176,7 @@ func featuredPosts(db *sqlx.DB) ([]*featuredPostData, error) {
 	}
 
 	for _, post := range posts {
-		post.PostURL = "/post/" + post.PostID 
+		post.PostURL = "/post/" + post.PostID
 	}
 
 	return posts, nil
@@ -180,7 +205,7 @@ func mostRecentPosts(db *sqlx.DB) ([]*mostRecentPostData, error) {
 	}
 
 	for _, post := range posts {
-		post.PostURL = "/post/" + post.PostID 
+		post.PostURL = "/post/" + post.PostID
 	}
 
 	return posts, nil

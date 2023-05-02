@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	port         = ":8000"
+	port         = ":8080"
 	dbDriverName = "mysql"
 )
 
@@ -26,8 +26,8 @@ func main() {
 
 	mux := mux.NewRouter()
 	mux.HandleFunc("/home", index(dbx))
-
 	mux.HandleFunc("/post/{postID}", post(dbx))
+	mux.HandleFunc("/admin", admin(dbx))
 
 	mux.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
@@ -39,5 +39,5 @@ func main() {
 }
 
 func openDB() (*sql.DB, error) {
-	return sql.Open(dbDriverName, "root:P@ssw0rd@tcp(localhost:3306)/blog?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true")
+	return sql.Open(dbDriverName, "root:1234@tcp(localhost:3306)/blog?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true")
 }

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Admin</title>
+  <link href="/static/css/admin.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="heading">
+    <span class="heading__title">Escape.</span>
+    <span class="heading__sign">author</span>
+  </div>
+  <div class="creating-posts">
+    <div class="creating-posts-intro">
+      <div class="introduction">
+        <span class="introduction__title">New Post</span>  
+        <span class="introduction__subtitle">Fill out the form bellow and publish your article</span>  
+      </div>
+      <button class="publish-button">Publish</button>
+    </div>
+    <div class="creating-post">
+      <div class="creating-post-form">
+        <span class="creating-post-form__title">Main Information</span>
+        <div class="input-title">
+          <span class="input-title__title">Title</span>
+          <input class="input-title__note" id="title" type="text" value="New Post" onchange="updateVisualTitle()">
+        </div>
+        <div class="input-subtitle">
+          <span class="input-subtitle__title">Short description</span>
+          <input class="input-subtitle__note" id="subtitle" type="text" value="Please, enter any description" onchange="updateVisualSubtitle()">
+        </div>
+        <div class="input-author-name">
+          <span class="input-author-name__title">Author name</span>
+          <input class="input-author-name__note" id="authorName" type="text" onchange="updateVisualAuthorName()">
+        </div>
+        <div class="input-author-photo">
+          <span class="input-author-photo__title">Author photo</span>
+          <form class="author-photo-form" method="post" enctype="multipart/form-data">
+            <div class="preview-author-photo"></div>
+            <label for="photo">Upload</label>
+            <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png">
+          </form>
+        </div>
+        <div class="input-publish-date">
+          <span class="input-publish-date__title">Publish Date</span>
+          <input class="input-publish-date__note" id="date" type="date" value="2023-05-01">
+        </div>
+        <div class="input-hero-image">
+          <span class="input-hero-image__title">Hero Image</span>
+          <div class="upload-place">
+            <img src="" class="upload-place__img" />
+            <span class="upload-place__text">Upload</span>
+          </div>
+          <span class="input-hero-image__sign">Size up to 10mb. Format: png, jpeg, gif.</span>
+        </div>
+        <div class="input-hero-image-tiny">
+          <span class="input-hero-image-tiny__title">Hero Image</span>
+          <div class="upload-place-tiny">
+            <img src="" class="upload-place-tiny__img" />
+            <span class="upload-place-tiny__text">Upload</span>
+          </div>
+          <span class="input-hero-image-tiny__sign">Size up to 5mb. Format: png, jpeg, gif.</span>
+        </div>
+      </div>
+      <div class="creating-post-visual">
+        <div class="article-preview">
+          <span class="article-preview__title">Article preview</span>
+          <div class="article-preview-post">
+            <div class="article-preview-post-description">
+              <div class="ellipses">
+                <div class="ellipse"></div><div class="ellipse"></div><div class="ellipse"></div>
+              </div>
+              <span class="article-preview-post-visual__title"  id="titleVisual">New Post</span>
+              <span class="article-preview-post-visual__subtitle" id="subtitleVisual">Please, enter any description</span>
+              <div class="article-preview-post-visual__photo"></div>
+            </div>
+          </div>
+        </div>
+        <div class="post-card-preview">
+          <span class="post-card-preview__title">Post card preview</span>
+          <div class="post-card-preview-visual">
+            <div class="post-card">
+              <div class="post-card__photo"></div>
+              <span class="post-card__title" id="titleVisualTiny">New Post</span>
+              <span class="post-card__subtitle" id="subtitleVisualTiny">Please, enter any description</span>
+              <div class="post-card-info">
+                <div class="post-card-info__photo"></div>
+                <span class="post-card-info__author" id="authorNameVisualTiny">Enter author name</span>
+                <span class="post-card-info__date">01.05.2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateVisualTitle() {
+      let title = document.getElementById('title').value;
+      let defaultTitle = 'New Post';
+      if (title !== '' && title.length < 25) {
+        document.getElementById('titleVisual').innerHTML = title;
+        document.getElementById('titleVisualTiny').innerHTML = title;
+      }
+      else {
+        document.getElementById('titleVisual').innerHTML = defaultTitle;
+        document.getElementById('titleVisualTiny').innerHTML = defaultTitle;
+      }
+    }
+    function updateVisualSubtitle() {
+      let subtitle = document.getElementById('subtitle').value;
+      let defaultSubtitle = 'Please, enter any description';
+      if (subtitle !== '' && subtitle.length < 60){
+        document.getElementById('subtitleVisual').innerHTML = subtitle;
+        document.getElementById('subtitleVisualTiny').innerHTML = subtitle;
+      } 
+      else {
+        document.getElementById('subtitleVisual').innerHTML = defaultSubtitle;
+        document.getElementById('subtitleVisualTiny').innerHTML = defaultSubtitle;
+      }   
+    }
+    function updateVisualAuthorName() {
+      let name = document.getElementById('authorName').value;
+      let defaultName = 'Enter author name';
+      if (name !== '' && name.length < 25){
+        document.getElementById('authorNameVisualTiny').innerHTML = name;
+      }    
+      else {
+        document.getElementById('authorNameVisualTiny').innerHTML = defaultName;
+      }
+    }
+    var input = document.getElementById('photo');
+    var preview = document.querySelector('.preview-author-photo');
+
+    input.style.opacity = 0;
+    input.addEventListener('change', updateImageDisplay);
+    function updateImageDisplay() {
+      while(preview.firstChild) {
+        preview.removeChild(preview.firstChild);
+      }
+
+      var curFile = input.files[0];
+        if(validFileType(curFile)) {
+          var image = document.createElement('img');
+          image.src = window.URL.createObjectURL(curFile);
+          preview.appendChild(image);
+        } 
+    }
+
+    var fileTypes = [
+      'image/jpeg',
+      'image/pjpeg',
+      'image/png'
+    ]
+
+    function validFileType(file) {
+      for(var i = 0; i < fileTypes.length; i++) {
+        if(file.type === fileTypes[i]) {
+          return true;
+        }
+      }
+      return false;
+    }
+  </script>
+</body>
+
+</html>
