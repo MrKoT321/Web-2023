@@ -3,23 +3,21 @@ INSERT INTO
 		title,
 		subtitle,
 		img_modifier,
+		img_url,
         author,
         author_modifier,
         publish_date,
-<<<<<<< HEAD
 		content,
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 		featured
     ) 
 VALUES (
 	'The Road Ahead',
 	'The road ahead might be paved - it might not be.',
     'feautured-post__background_the-road-ahead',
+	'/static/img/image1.png',
     'Mat Vogels',
     'author_Mat-Vogels',
 	'25/9/2015',
-<<<<<<< HEAD
 	'
 Dark spruce forest frowned on either side the frozen waterway. The trees had been stripped by a recent wind of their white covering of frost, and they seemed to lean towards each other, black and ominous, in the fading light. A vast silence reigned over the land. The land itself was a desolation, lifeless, without movement, so lone and cold that the spirit of it was not even that of sadness. There was a hint in it of laughter, but of a laughter more terrible than any sadness—a laughter that was mirthless as the smile of the sphinx, a laughter cold as the frost and partaking of the grimness of infallibility. It was the masterful and incommunicable wisdom of eternity laughing at the futility of life and the effort of life. It was the Wild, the savage, frozen-hearted Northland Wild.
 	
@@ -29,8 +27,6 @@ In advance of the dogs, on wide snowshoes, toiled a man. At the rear of the sled
 	
 But at front and rear, unawed and indomitable, toiled the two men who were not yet dead. Their bodies were covered with fur and soft-tanned leather. Eyelashes and cheeks and lips were so coated with the crystals from their frozen breath that their faces were not discernible. This gave them the seeming of ghostly masques, undertakers in a spectral world at the funeral of some ghost. But under it all they were men, penetrating the land of desolation and mockery and silence, puny adventurers bent on colossal adventure, pitting themselves against the might of a world as remote and alien and pulseless as the abysses of space.
 	',
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 	1
 );
 
@@ -39,23 +35,21 @@ INSERT INTO
 		title,
 		subtitle,
 		img_modifier,
+		img_url,
         author,
         author_modifier,
         publish_date,
-<<<<<<< HEAD
 		content,
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 		featured
     ) 
 VALUES (
 	'From Top Down',
 	'Once a year, go someplace you"ve never been before.',
     'feautured-post__background_from-top-down',
+	'/static/img/image1.png',
     'William Wong',
     'author_William-Wong',
 	'25/9/2015',
-<<<<<<< HEAD
 	'
 	From Top Down - A Journey to the Highest Peaks
 
@@ -69,8 +63,6 @@ Throughout the journey, I was reminded of the importance of trying new things an
 
 In conclusion, my journey from top to bottom was a reminder of the beauty and wonder that exists in our world. It was a journey that left me with memories I will cherish for a lifetime. I encourage everyone to take the time to go somewhere they`ve never been before, and to experience all the amazing things our world has to offer. Only by exploring new places and trying new things can we truly appreciate the vastness and diversity of our planet.
 	',
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 	1
 );
 
@@ -78,24 +70,20 @@ INSERT INTO
 	post (
 		title,
 		subtitle,
-		img_modifier,
+		img_url,
         author,
         author_modifier,
         publish_date,
-<<<<<<< HEAD
 		content,
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 		featured
     ) 
 VALUES (
 	'Still Standing Tall',
 	'Life begins at the end of your comfort zone.',
-    '../static/img/image3.jpg',
+    '/static/img/image3.jpg',
     'William Wong',
     'author_William-Wong',
 	'25/9/2015',
-<<<<<<< HEAD
 	'
 	As a traveler, I’ve been to many different places and have seen countless stunning sights. However, there’s one journey that always stands out in my mind - a trip to the Sequoia National Park in California.
 
@@ -109,8 +97,6 @@ As a traveler, I believe that journeys aren’t just about seeing new places and
 
 So whenever I feel overwhelmed or discouraged, I think back to those towering trees and remind myself that I too can stand tall and weather any storm that comes my way.
 	',
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 	0
 );
 
@@ -118,24 +104,20 @@ INSERT INTO
 	post (
 		title,
 		subtitle,
-		img_modifier,
+		img_url,
         author,
         author_modifier,
         publish_date,
-<<<<<<< HEAD
 		content,
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 		featured
     ) 
 VALUES (
 	'Sunny Side Up',
 	'No place is ever as bad as they tell you it"s going to be.',
-    '../static/img/image4.png',
+    '/static/img/image4.png',
     'Mat Vogels',
     'author_Mat-Vogels',
 	'25/9/2015',
-<<<<<<< HEAD
 	'
 	Sunny Side Up - A Journey of Surprises and Delights
 
@@ -153,8 +135,6 @@ As my journey came to a close and I boarded the ferry back to Bali, I couldn`t h
 
 If you`re looking for a new adventure, consider exploring the sunny side of Southeast Asia. You might just find yourself falling in love with a place you never knew existed.
 	',
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 	0
 );
 
@@ -162,24 +142,20 @@ INSERT INTO
 	post (
 		title,
 		subtitle,
-		img_modifier,
+		img_url,
         author,
         author_modifier,
         publish_date,
-<<<<<<< HEAD
 		content,
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 		featured
     ) 
 VALUES (
 	'Water Falls',
 	'We travel not to escape life, but for life not to escape us.',
-    '../static/img/image5.png',
+    '/static/img/image5.png',
     'Mat Vogels',
     'author_Mat-Vogels',
 	'25/9/2015',
-<<<<<<< HEAD
 	'
 	As a traveler, I have had the opportunity to explore some of the most beautiful natural wonders that this world has to offer, but nothing quite compares to the majestic beauty of waterfalls. There is something about the raw power and grace of water cascading down rock faces that leaves you in awe and wonder.
 
@@ -193,8 +169,6 @@ But not all waterfall journeys have to be grand and dramatic. Sometimes, it`s th
 
 In conclusion, waterfalls are natural wonders that never fail to amaze and inspire me. Each waterfall has its own unique personality and charm, and I feel incredibly grateful to have had the opportunity to witness their beauty firsthand. The journey to discover waterfalls has been an unforgettable one, and I cannot wait to see what other surprises the world has in store for me.
 	',
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 	0
 );
 
@@ -202,24 +176,20 @@ INSERT INTO
 	post (
 		title,
 		subtitle,
-		img_modifier,
+		img_url,
         author,
         author_modifier,
         publish_date,
-<<<<<<< HEAD
 		content,
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 		featured
     ) 
 VALUES (
 	'Through the Mist',
 	'Travel makes you see what a tiny place you occupy in the world.',
-    '../static/img/image6.png',
+    '/static/img/image6.png',
     'William Wong',
     'author_William-Wong',
 	'25/9/2015',
-<<<<<<< HEAD
 	'
 	As a traveler, I have come to realize that one of the most mesmerizing experiences is watching the world awaken from behind a veil of mist. It is a unique moment when everything around you remains shrouded in mystery, and all you can hear are the sounds of nature, and all you can feel is the cool breeze on your skin. It`s a moment that reminds you of how tiny you are in this vast world and how there`s so much more to explore beyond your comfort zone.
 
@@ -235,8 +205,6 @@ As I reached my destination and the mist began to lift, revealing the vast expan
 
 In conclusion, Through the Mist was an unforgettable journey that reminded me of the beauty that lies beyond my comfort zone. It taught me to embrace the unknown and appreciate the simple joys of life. As I continue to travel, I hope to experience many more such moments that allow me to connect with nature and discover myself.
 	',
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 	0
 );
 
@@ -244,24 +212,20 @@ INSERT INTO
 	post (
 		title,
 		subtitle,
-		img_modifier,
+		img_url,
         author,
         author_modifier,
         publish_date,
-<<<<<<< HEAD
 		content,
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 		featured
     ) 
 VALUES (
 	'Awaken Early',
 	'Not all those who wander are lost.',
-    '../static/img/image7.png',
+    '/static/img/image7.png',
     'Mat Vogels',
     'author_Mat-Vogels',
 	'25/9/2015',
-<<<<<<< HEAD
 	'
 	As a traveler, I have always believed in the adage that not all those who wander are lost. The journey itself is as important as the destination. One of my favorite things about traveling is experiencing the world wake up around me. There`s something magical about being up early, watching the sun rise over a new place, seeing the locals begin their day, and feeling like you have the whole world to yourself.
 
@@ -277,8 +241,6 @@ Finally, on my last morning in Cusco, I woke up early once again to visit the fa
 
 In the end, "Awaken Early" became one of my favorite journeys. The early mornings allowed me to experience Cusco in a way that few others have, and I felt like I had truly immersed myself in the city`s culture and history. It reminded me that sometimes the best moments happen when we`re willing to wake up a little earlier and experience the world as it wakes up around us.
 	',
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 	0
 );
 
@@ -286,24 +248,20 @@ INSERT INTO
 	post (
 		title,
 		subtitle,
-		img_modifier,
+		img_url,
         author,
         author_modifier,
         publish_date,
-<<<<<<< HEAD
 		content,
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 		featured
     ) 
 VALUES (
 	'Try it Always',
 	'The world is a book, and those who do not travel read only one page.',
-    '../static/img/image8.png',
+    '/static/img/image8.png',
     'Mat Vogels',
     'author_Mat-Vogels',
 	'25/9/2015',
-<<<<<<< HEAD
 	'
 	Whenever I visit a new place, I make it a point to try something new. It could be trying out the local cuisine, indulging in an adventure sport or even just taking a different route back to my hotel. This philosophy of trying something new has never failed me and has always made my travels more memorable.
 
@@ -315,7 +273,5 @@ Trying something new can also mean stepping out of your comfort zone. During my 
 
 Traveling is not just about ticking off places from a bucket list, it`s about experiencing new things and pushing your boundaries. Trying something new can be scary, but it can also be incredibly rewarding. So, the next time you travel, make it a point to try something new. You never know, it might just become your next favorite thing.
 	',
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 	0
 );

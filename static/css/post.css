@@ -1,4 +1,4 @@
-body
+body 
 {
     margin: 0;
 }
@@ -60,29 +60,13 @@ body
     color: rgba(46, 46, 46, 1);
 }
 
-.entry__subtitle
-{
-    font-family: 'Oxygen';
-    font-size: 17px;
-    line-height: 20px;
-    color: rgba(46, 46, 46, 1);
-}
-
 .logo-img
 {
-<<<<<<< HEAD
-=======
-    background: url("../img/logo2.png") no-repeat;
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
     height: 534px;
     width: 100%;
     background-size: cover;
     background-position: center;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 /* article */
 .article-post
 {

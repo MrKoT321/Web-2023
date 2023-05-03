@@ -3,11 +3,7 @@
 
 <head>
   <title>Blog</title>
-<<<<<<< HEAD
   <link href="/static/css/style.css" type="text/css" rel="stylesheet">
-=======
-  <link href="../static/css/style.css" rel="stylesheet">
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
 </head>
 
 <body>
@@ -36,44 +32,28 @@
   <section class="feautured-posts">
     <h2 class="feautured-posts__heading">Featured Posts</h2>
     {{ range .FeaturedPosts }}
-<<<<<<< HEAD
     <a href="{{ .PostURL }}" class="feautured-post {{ .ImgModifier }}">
-=======
-    <div class="feautured-post {{ .ImgModifier }}">
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
       <span class="feautured-post__title">{{ .Title }}</span>
       <p class="feautured-post__subtitle">{{ .Subtitle }}</p>
       <div class="feautured-post-info">
         <span class="feautured-post-info__author {{ .AuthorModifier }}">{{ .Author }}</span>
         <span class="feautured-post-info__date">{{ .PublishDate }}</span>
       </div>
-<<<<<<< HEAD
     </a>
-=======
-    </div>
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
     {{ end }}
   </section>
   <section class="most-recent-posts">
     <h2 class="most-recent-posts__title">Most Recent</h2>
     {{ range .MostRecentPosts }}
-<<<<<<< HEAD
     <a href="{{ .PostURL }}" class="most-recent-post">
-=======
-    <div class="most-recent-post">
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
-      <img src="{{ .ImgModifier }}" class="most-cecent-post__img">
+      <img src="{{ .ImgURL }}" class="most-cecent-post__img">
       <span class="most-recent-post__title">{{ .Title }}</span>
       <p class="most-recent-post__subtitle">{{ .Subtitle }}</p>
       <div class="most-recent-post-info">
         <span class="most-recent-post-info__author {{ .AuthorModifier }}">{{ .Author }}</span>
         <span class="most-recent-post-info__date">{{ .PublishDate }}</span>
       </div>
-<<<<<<< HEAD
     </a>
-=======
-    </div>
->>>>>>> 2933629f94622529b12de65018a845ea35fee356
     {{ end }}
   </section>
   <div class="site-footer">
