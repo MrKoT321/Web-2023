@@ -44,7 +44,7 @@
         </div>
         <div class="input-publish-date">
           <span class="input-publish-date__title">Publish Date</span>
-          <input class="input-publish-date__note" id="date" type="date" value="2023-05-01">
+          <input class="input-publish-date__note" id="date" type="date" value="2023-05-01" onchange="updateVisualDate()">
         </div>
         <div class="input-hero-image">
           <span class="input-hero-image__title">Hero Image</span>
@@ -89,7 +89,7 @@
               <div class="post-card-info">
                 <img class="post-card-info__photo" />
                 <span class="post-card-info__author" id="authorNameVisualTiny">Enter author name</span>
-                <span class="post-card-info__date">01.05.2023</span>
+                <span class="post-card-info__date" id="dateVisuality">01/05/2023</span>
               </div>
             </div>
           </div>
@@ -133,6 +133,17 @@
       }    
       else {
         document.getElementById('authorNameVisualTiny').innerHTML = defaultName;
+      }
+    }
+
+    async function updateVisualDate() {
+      let date = document.getElementById('date').value;
+      let defaultDate = '01/05/2023';
+      if (date !== ''){
+        document.getElementById('dateVisuality').innerHTML = date;
+      }    
+      else {
+        document.getElementById('dateVisuality').innerHTML = defaultDate;
       }
     }
 
@@ -192,6 +203,27 @@
       reader.readAsDataURL(file);
     }
   }
+
+  async function doFetch() {
+    const response = await fetch(window.location.href);
+    if (response.ok) {
+      let data = [];
+      data.push(document.getElementById('title').value);
+      data.push(document.getElementById('subtitle').value);
+      data.push(document.querySelector(".input-hero-image-tiny__input").files[0].name);
+      data.push(document.querySelector(".author-photo-form__input").files[0].name);
+      data.push(document.getElementById('authorName').value);
+      data.push(document.querySelector(".input-hero-image__input").files[0].name);
+      data.push(document.querySelector(".input-publish-date__note").value);
+
+      const json = await response.json();
+      console.log(json);
+    }
+      console.log("Ошибка HTTP" + response);
+  }
+
+  const submit = document.querySelector(".publish-button");
+  submit.onclick = addEventListener("click", doFetch);
   </script>
 </body>
 
