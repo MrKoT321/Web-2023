@@ -192,7 +192,7 @@ body
     line-height: 16px;
 }
 
-.input-author-name__note
+.input-author-name__note 
 {
     margin-top: 5px;
     width: 560px;
@@ -222,6 +222,7 @@ body
 
 .author-photo-form
 {
+    position: relative;
     margin-top: 10px;
     display: flex;
     flex-direction: row;
@@ -235,12 +236,13 @@ body
     background: #F7F7F7;
     border: 1px dashed #D3D3D3;
     border-radius: 24px;
+    cursor: pointer;
 }
 
-.author-photo-form__button
+.author-photo-form__upload-button
 {
-    margin-left: 16px;
-    width: 53px;
+    position: absolute;
+    left: 60px;
     height: 24px;
     font-family: 'Oxygen';
     font-size: 16px;
@@ -250,11 +252,58 @@ body
     cursor: pointer;
 }
 
+.author-photo-form__upload-button-view
+{
+    margin-left: 36px;
+}
+
+.upload-button__icon
+{
+    position: absolute;
+    display: none;
+    left: 6px;
+}
+
+.upload-button__icon-view
+{
+    display: flex;
+}
+
 .author-photo-form__input
 {
+    display: none;
     width: 1px;
 }
 
+.author-photo-form__remove-button
+{
+    position: absolute;
+    left: 234px;
+    margin-left: 16px;
+    width: 53px;
+    height: 24px;
+    border: none;
+    outline: none;
+    display: none;
+    background-color: rgba(255, 255, 255, 1);
+    font-family: 'Oxygen';
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #E86961;
+    cursor: pointer;
+}
+
+.remove-button__icon
+{
+    position: absolute;
+    left: -27px;
+}
+
+.remove-button__remove-button-show
+{
+    display: flex;
+}
 .input-publish-date
 {
     display: flex;
@@ -312,8 +361,14 @@ body
 
 .upload-place__img
 {
-    width: 22px;
-    height: 18px;
+    width: 560px;
+    height: 160px;
+    border-radius: 6px;
+}
+
+.input-hero-image__input
+{
+    display: none;
 }
 
 .upload-place__text
@@ -354,7 +409,7 @@ body
     height: 150px;
     border: 1px dashed #D3D3D3;
     border-radius: 6px;
-    background: #F7F7F7;
+    background: #F7F7F7;    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -362,16 +417,13 @@ body
 
 .upload-place-tiny__img
 {
-    width: 22px;
-    height: 18px;
+    width: 296px;
+    height: 150px;
 }
 
-.upload-place-tiny__text
+.input-hero-image-tiny__input
 {
-    font-family: 'Oxygen';
-    font-size: 16px;
-    line-height: 24px;
-    color: #2E2E2E;
+    display: none;
 }
 
 .input-hero-image-tiny__sign
@@ -484,6 +536,7 @@ body
     width: 100%;
     height: 160px;
     background: #F7F7F7;
+    border-color: #F7F7F7;
 }
 
 .post-card-preview
