@@ -304,6 +304,7 @@ body
 {
     display: flex;
 }
+
 .input-publish-date
 {
     display: flex;
@@ -357,6 +358,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .upload-place__img
@@ -388,6 +390,66 @@ body
     color: #999999;
 }
 
+.input-hero-image__sign-remove
+{
+    display: none;
+}
+
+.img-buttons
+{
+    display: none;
+    align-items: center;
+    width: 100%;
+}
+
+.img-buttons-show
+{
+    margin-top: 12px;
+    display: flex;
+}
+
+.upload-hero
+{
+    border: none;
+    outline: none;
+    display: flex;
+    height: 24px;
+
+    font-family: 'Oxygen';
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #2E2E2E;
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.upload-hero__button
+{
+    margin-left: 9px;
+    margin-right: 17px;
+}
+
+.remove-hero
+{
+    border: none;
+    outline: none;
+    display: flex;
+    height: 24px;
+    font-family: 'Oxygen';
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #2E2E2E;
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.remove-hero__button
+{
+    margin-left: 17px;
+}
+
 .input-hero-image-tiny
 {
     display: flex;
@@ -413,6 +475,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .upload-place-tiny__img
@@ -433,6 +496,24 @@ body
     font-size: 12px;
     line-height: 16px;
     color: #999999;
+}
+
+.input-hero-image-tiny__sign-remove
+{
+    display: none;
+}
+
+.tiny-img-buttons
+{
+    display: none;
+    align-items: center;
+    width: 100%;
+}
+
+.tiny-img-buttons-show
+{
+    margin-top: 12px;
+    display: flex;
 }
 
 .creating-post-visual
