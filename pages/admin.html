@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Admin</title>
+  <title>{{ .Title }}</title>
   <link href="/static/css/admin.css" type="text/css" rel="stylesheet">
 </head>
 
@@ -146,7 +146,7 @@
       <span class="post-article__title">Content</span>
       <div class="upload-post-article">
         <span class="upload-post-article__title">Post content (plain text)</span>
-        <input type="text" class="upload-post-article__input" placeholder="Type anything you want ..." />
+        <textarea class="upload-post-article__input" placeholder="Type anything you want ..."></textarea>
       </div>
     </div>
   </div>
@@ -324,8 +324,7 @@
 
 </html>
 
-<!-- https://habr.com/ru/articles/423035/ -->
 
 <!-- FIXE: Текст в поле Content -->
 <!-- TODO: Добавить вывод в консоль json -->
-<!-- TODO: Добавить страничку login -->
+<!-- TODO: Добавить стили в input поля -->

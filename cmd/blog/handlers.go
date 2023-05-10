@@ -28,6 +28,11 @@ type postData struct {
 type adminPageData struct {
 	Title string
 }
+
+type loginPageData struct {
+	Title string
+}
+
 type featuredPostData struct {
 	PostID         string `db:"post_id"`
 	Title          string `db:"title"`
@@ -140,7 +145,29 @@ func admin(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		data := adminPageData{
-			Title: "Let's do it together.",
+			Title: "Admin",
+		}
+		err = ts.Execute(w, data)
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err)
+			return
+		}
+
+		log.Println("Request completed successfully")
+	}
+}
+
+func login(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		ts, err := template.ParseFiles("pages/login.html")
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err)
+			return
+		}
+		data := loginPageData{
+			Title: "Login",
 		}
 		err = ts.Execute(w, data)
 		if err != nil {

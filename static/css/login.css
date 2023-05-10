@@ -1,0 +1,145 @@
+body 
+{
+    margin: 0;
+    background: url("../img/loginimg.png") no-repeat;
+    background-size: cover;
+    
+}
+
+.login
+{
+    margin: 120px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.intro
+{
+    margin-left: 15.972%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.intro-title
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.intro-title__title
+{
+    font-family: 'Lora';
+    font-size: 45.5px;
+    line-height: 46px;
+    color: #FFFFFF;
+    
+}
+
+.intro-title__subtitle
+{
+    margin-top: 16px;
+    font-family: 'Oxygen';
+    font-size: 24.5px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.intro__subtitle
+{
+    font-family: 'Oxygen';
+    font-size: 17px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+.login-form
+{
+    width: 480px;
+    height: 560px;
+    margin-right: 9.027%;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form__title
+{
+    margin-top: 56px;
+    margin-left: 40px;
+    font-family: 'Lora';
+    font-size: 34px;
+    line-height: 40px;
+}
+
+.login-form-email
+{
+    margin: 50px 40px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form-email__label
+{
+    margin-bottom: 5px;
+    font-family: 'Oxygen';
+    font-size: 12px;
+    line-height: 16px;
+    color: #7A7A7A;
+}
+
+.login-form-email__input
+{
+    width: 400px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 0;
+    border-width: 0;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.login-form-password
+{
+    margin: 40px 40px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form-password__label
+{
+    font-family: 'Oxygen';
+    font-size: 12px;
+    line-height: 16px;
+    color: #7A7A7A;
+}
+
+.login-form-password__input
+{
+    width: 400px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 0;
+    border-width: 0;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.login-form-button
+{
+    margin: 40px;
+    width: 93px;
+    height: 48px;
+    background: #DD783F;
+    border-width: 0;
+    border-radius: 3px;
+    text-align: center;
+    font-family: 'Oxygen';
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
