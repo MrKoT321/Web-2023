@@ -15,18 +15,22 @@
       </div>
       <span class="intro__subtitle">Log in to start creating</span>
     </div>
-    <div class="login-form">
+    <form class="login-form">
       <span class="login-form__title">Log In</span>
       <div class="login-form-email">
         <span class="login-form-email__label">Email</span>
-        <input type="text" class="login-form-email__input" />
+        <input type="text" class="login-form-email__input" required />
       </div>
       <div class="login-form-password">
-        <span class="login-form-password__label">Password</span> 
-        <input type="text" class="login-form-password__input" />
+        <span class="login-form-password__label">Password</span>            
+        <input type="text" class="login-form-password__input" required />
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="login-form-password__show-hide">
+            <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg> 
       </div>
       <button class="login-form-button">Log In</button>
-    </div>
+    </form>
    </div>
 </body>
 
