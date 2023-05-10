@@ -191,11 +191,32 @@ body
     border-radius: 5px 5px 0 0;
 }
 
-.login-form-password__show-hide
+.login-form-password__show-password
 {
     position: absolute; 
     top: 25px;
     right: 10px;
+    cursor: pointer;
+    display: flex;
+}
+
+.login-form-password__show-password-replace
+{
+    display: none;
+}
+
+.login-form-password__hide-password
+{
+    position: absolute; 
+    top: 25px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.login-form-password__hide-password-replace
+{
+    display: flex;
 }
 
 .login-form-button
@@ -211,4 +232,5 @@ body
     font-size: 16px;
     line-height: 24px;
     color: #FFFFFF;
+    cursor: pointer;
 }

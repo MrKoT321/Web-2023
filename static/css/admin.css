@@ -576,6 +576,21 @@ body
     display: flex;
 }
 
+.remove-tiny-hero
+{
+    border: none;
+    outline: none;
+    display: flex;
+    height: 24px;
+    font-family: 'Oxygen';
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #2E2E2E;
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
 .creating-post-visual
 {
     margin-left: 40px;

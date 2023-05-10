@@ -7,6 +7,7 @@
 </head>
 
 <body>
+  <script async src="/js/admin.js"></script>
   <div class="heading">
     <span class="heading__title">Escape.</span>
     <span class="heading__sign">author</span>
@@ -17,22 +18,22 @@
         <span class="introduction__title">New Post</span>  
         <span class="introduction__subtitle">Fill out the form bellow and publish your article</span>  
       </div>
-      <button class="publish-button">Publish</button>
+      <input type="submit" class="publish-button" value="Publish" />
     </div>
-    <div class="creating-post">
+    <form class="creating-post">
       <div class="creating-post-form">
         <span class="creating-post-form__title">Main Information</span>
         <div class="input-title">
           <span class="input-title__title">Title</span>
-          <input class="input-title__note" id="title" type="text" value="New Post" required onchange="updateVisualTitle()">
+          <input class="input-title__note" id="title" type="text" value="New Post" required />
         </div>
         <div class="input-subtitle">
           <span class="input-subtitle__title">Short description</span>
-          <input class="input-subtitle__note" id="subtitle" type="text" value="Please, enter any description" required onchange="updateVisualSubtitle()">
+          <input class="input-subtitle__note" id="subtitle" type="text" value="Please, enter any description" required />
         </div>
         <div class="input-author-name">
           <span class="input-author-name__title">Author name</span>
-          <input class="input-author-name__note" id="authorName" type="text" required onchange="updateVisualAuthorName()">
+          <input class="input-author-name__note" id="authorName" type="text" required />
         </div>
         <div class="input-author-photo">
           <span class="input-author-photo__title">Author photo</span>
@@ -47,8 +48,8 @@
                 </svg>                
               <span id="uploadAuthorPhotoButton">Upload</span>
             </label>
-            <input type="file" id="photoAuthor" name="photoAuthor" accept=".jpg, .jpeg, .png" class="author-photo-form__input" required onchange="updateVisualAuthorPhoto()">
-            <button class="author-photo-form__remove-button" onclick="removeVisualAuthorPhoto()">
+            <input type="file" id="photoAuthor" name="photoAuthor" accept=".jpg, .jpeg, .png" class="author-photo-form__input" required />
+            <button class="author-photo-form__remove-button">
               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="remove-button__icon">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.93934 1.93934C7.22064 1.65804 7.60218 1.5 8 1.5H12C12.3978 1.5 12.7794 1.65804 13.0607 1.93934C13.342 2.22064 13.5 2.60218 13.5 3V4.5H6.5V3C6.5 2.60218 6.65804 2.22064 6.93934 1.93934ZM5.5 4.5V3C5.5 2.33696 5.76339 1.70107 6.23223 1.23223C6.70107 0.763392 7.33696 0.5 8 0.5H12C12.663 0.5 13.2989 0.763392 13.7678 1.23223C14.2366 1.70107 14.5 2.33696 14.5 3V4.5H17H19C19.2761 4.5 19.5 4.72386 19.5 5C19.5 5.27614 19.2761 5.5 19 5.5H17.5V19C17.5 19.663 17.2366 20.2989 16.7678 20.7678C16.2989 21.2366 15.663 21.5 15 21.5H5C4.33696 21.5 3.70107 21.2366 3.23223 20.7678C2.76339 20.2989 2.5 19.663 2.5 19V5.5H1C0.723858 5.5 0.5 5.27614 0.5 5C0.5 4.72386 0.723858 4.5 1 4.5H3H5.5ZM3.5 5.5H6H14H16.5V19C16.5 19.3978 16.342 19.7794 16.0607 20.0607C15.7794 20.342 15.3978 20.5 15 20.5H5C4.60218 20.5 4.22064 20.342 3.93934 20.0607C3.65804 19.7794 3.5 19.3978 3.5 19V5.5ZM8 9.5C8.27614 9.5 8.5 9.72386 8.5 10V16C8.5 16.2761 8.27614 16.5 8 16.5C7.72386 16.5 7.5 16.2761 7.5 16V10C7.5 9.72386 7.72386 9.5 8 9.5ZM12.5 10C12.5 9.72386 12.2761 9.5 12 9.5C11.7239 9.5 11.5 9.72386 11.5 10V16C11.5 16.2761 11.7239 16.5 12 16.5C12.2761 16.5 12.5 16.2761 12.5 16V10Z" fill="#E86961"/>
                 </svg>                
@@ -58,14 +59,14 @@
         </div>
         <div class="input-publish-date">
           <span class="input-publish-date__title">Publish Date</span>
-          <input class="input-publish-date__note" id="date" type="date" value="2023-05-01" required onchange="updateVisualDate()">
+          <input class="input-publish-date__note" id="date" type="date" value="2023-05-01" required />
         </div>
         <div class="input-hero-image">
           <span class="input-hero-image__title">Hero Image</span>
           <label class="upload-place" for="photoPost">
             <img src="/static/img/postphoto0.png" class="upload-place__img" />
           </label>
-          <input type="file" id="photoPost" name="photoPost" accept=".jpg, .jpeg, .png" class="input-hero-image__input" required onchange="updateVisualPostPhoto()">
+          <input type="file" id="photoPost" name="photoPost" accept=".jpg, .jpeg, .png" class="input-hero-image__input" required />
           <span class="input-hero-image__sign">Size up to 10mb. Format: png, jpeg, jpg.</span>
           <div class="img-buttons">
             <label for="photoPost" class="upload-hero">
@@ -75,11 +76,11 @@
                 </svg>   
               <span class="upload-hero__button">Upload New</span>
             </label>
-            <button class="remove-hero" onclick="removeVisualPostPhoto()">
+            <button class="remove-hero">
               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.93934 1.93934C7.22064 1.65804 7.60218 1.5 8 1.5H12C12.3978 1.5 12.7794 1.65804 13.0607 1.93934C13.342 2.22064 13.5 2.60218 13.5 3V4.5H6.5V3C6.5 2.60218 6.65804 2.22064 6.93934 1.93934ZM5.5 4.5V3C5.5 2.33696 5.76339 1.70107 6.23223 1.23223C6.70107 0.763392 7.33696 0.5 8 0.5H12C12.663 0.5 13.2989 0.763392 13.7678 1.23223C14.2366 1.70107 14.5 2.33696 14.5 3V4.5H17H19C19.2761 4.5 19.5 4.72386 19.5 5C19.5 5.27614 19.2761 5.5 19 5.5H17.5V19C17.5 19.663 17.2366 20.2989 16.7678 20.7678C16.2989 21.2366 15.663 21.5 15 21.5H5C4.33696 21.5 3.70107 21.2366 3.23223 20.7678C2.76339 20.2989 2.5 19.663 2.5 19V5.5H1C0.723858 5.5 0.5 5.27614 0.5 5C0.5 4.72386 0.723858 4.5 1 4.5H3H5.5ZM3.5 5.5H6H14H16.5V19C16.5 19.3978 16.342 19.7794 16.0607 20.0607C15.7794 20.342 15.3978 20.5 15 20.5H5C4.60218 20.5 4.22064 20.342 3.93934 20.0607C3.65804 19.7794 3.5 19.3978 3.5 19V5.5ZM8 9.5C8.27614 9.5 8.5 9.72386 8.5 10V16C8.5 16.2761 8.27614 16.5 8 16.5C7.72386 16.5 7.5 16.2761 7.5 16V10C7.5 9.72386 7.72386 9.5 8 9.5ZM12.5 10C12.5 9.72386 12.2761 9.5 12 9.5C11.7239 9.5 11.5 9.72386 11.5 10V16C11.5 16.2761 11.7239 16.5 12 16.5C12.2761 16.5 12.5 16.2761 12.5 16V10Z" fill="#E86961"/>
                 </svg>
-              <span class="upload-hero__button">Remove</span>
+              <span class="remove-hero__button">Remove</span>
             </button>
           </div>
         </div>
@@ -88,7 +89,7 @@
           <label for="photoPostTiny" class="upload-place-tiny">
             <img src="/static/img/postphototiny0.png" class="upload-place-tiny__img" />
           </label>
-          <input type="file" id="photoPostTiny" name="photoPostTiny" accept=".jpg, .jpeg, .png" class="input-hero-image-tiny__input" onchange="updateVisualPostTinyPhoto()">
+          <input type="file" id="photoPostTiny" name="photoPostTiny" accept=".jpg, .jpeg, .png" class="input-hero-image-tiny__input">
           <span class="input-hero-image-tiny__sign">Size up to 5mb. Format: png, jpeg, jpg.</span>
           <div class="tiny-img-buttons">
             <label for="photoPostTiny" class="upload-hero">
@@ -98,11 +99,11 @@
                 </svg>   
               <span class="upload-hero__button">Upload New</span>
             </label>
-            <button class="remove-hero" onclick="removeVisualPostTinyPhoto()">
+            <button class="remove-tiny-hero">
               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.93934 1.93934C7.22064 1.65804 7.60218 1.5 8 1.5H12C12.3978 1.5 12.7794 1.65804 13.0607 1.93934C13.342 2.22064 13.5 2.60218 13.5 3V4.5H6.5V3C6.5 2.60218 6.65804 2.22064 6.93934 1.93934ZM5.5 4.5V3C5.5 2.33696 5.76339 1.70107 6.23223 1.23223C6.70107 0.763392 7.33696 0.5 8 0.5H12C12.663 0.5 13.2989 0.763392 13.7678 1.23223C14.2366 1.70107 14.5 2.33696 14.5 3V4.5H17H19C19.2761 4.5 19.5 4.72386 19.5 5C19.5 5.27614 19.2761 5.5 19 5.5H17.5V19C17.5 19.663 17.2366 20.2989 16.7678 20.7678C16.2989 21.2366 15.663 21.5 15 21.5H5C4.33696 21.5 3.70107 21.2366 3.23223 20.7678C2.76339 20.2989 2.5 19.663 2.5 19V5.5H1C0.723858 5.5 0.5 5.27614 0.5 5C0.5 4.72386 0.723858 4.5 1 4.5H3H5.5ZM3.5 5.5H6H14H16.5V19C16.5 19.3978 16.342 19.7794 16.0607 20.0607C15.7794 20.342 15.3978 20.5 15 20.5H5C4.60218 20.5 4.22064 20.342 3.93934 20.0607C3.65804 19.7794 3.5 19.3978 3.5 19V5.5ZM8 9.5C8.27614 9.5 8.5 9.72386 8.5 10V16C8.5 16.2761 8.27614 16.5 8 16.5C7.72386 16.5 7.5 16.2761 7.5 16V10C7.5 9.72386 7.72386 9.5 8 9.5ZM12.5 10C12.5 9.72386 12.2761 9.5 12 9.5C11.7239 9.5 11.5 9.72386 11.5 10V16C11.5 16.2761 11.7239 16.5 12 16.5C12.2761 16.5 12.5 16.2761 12.5 16V10Z" fill="#E86961"/>
                 </svg>
-              <span class="upload-hero__button">Remove</span>
+              <span class="remove-hero__button">Remove</span>
             </button>
           </div>
         </div>
@@ -141,7 +142,7 @@
           <div class="vertical-gradient-post-card-visual"></div>
         </div>
       </div>
-    </div>
+    </form>
     <div class="post-article">
       <span class="post-article__title">Content</span>
       <div class="upload-post-article">
@@ -150,176 +151,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    async function updateVisualTitle() {
-      let title = document.getElementById('title').value;
-      let defaultTitle = 'New Post';
-      if (title !== '' && title.length < 25) {
-        document.getElementById('titleVisual').innerHTML = title;
-        document.getElementById('titleVisualTiny').innerHTML = title;
-      }
-      else {
-        document.getElementById('titleVisual').innerHTML = defaultTitle;
-        document.getElementById('titleVisualTiny').innerHTML = defaultTitle;
-      }
-    }
-
-    async function updateVisualSubtitle() {
-      let subtitle = document.getElementById('subtitle').value;
-      let defaultSubtitle = 'Please, enter any description';
-      if (subtitle !== '' && subtitle.length < 60){
-        document.getElementById('subtitleVisual').innerHTML = subtitle;
-        document.getElementById('subtitleVisualTiny').innerHTML = subtitle;
-      } 
-      else {
-        document.getElementById('subtitleVisual').innerHTML = defaultSubtitle;
-        document.getElementById('subtitleVisualTiny').innerHTML = defaultSubtitle;
-      }   
-    }
-
-    async function updateVisualAuthorName() {
-      let name = document.getElementById('authorName').value;
-      let defaultName = 'Enter author name';
-      if (name !== '' && name.length < 25){
-        document.getElementById('authorNameVisualTiny').innerHTML = name;
-      }    
-      else {
-        document.getElementById('authorNameVisualTiny').innerHTML = defaultName;
-      }
-    }
-
-    async function updateVisualDate() {
-      let date = document.getElementById('date').value;
-      let defaultDate = '01/05/2023';
-      if (date !== ''){
-        document.getElementById('dateVisuality').innerHTML = date;
-      }    
-      else {
-        document.getElementById('dateVisuality').innerHTML = defaultDate;
-      }
-    }
-
-    async function updateVisualAuthorPhoto() {
-      const previewPostCardAuthorPhoto = document.querySelector(".post-card-info__photo");
-      const previewInput = document.querySelector(".preview-author-photo");
-      const file = document.querySelector(".author-photo-form__input").files[0];
-      const reader = new FileReader();
-        reader.addEventListener(
-          "load",
-          () => {
-            previewPostCardAuthorPhoto.src = reader.result;
-            previewInput.src = reader.result;
-          },
-          false
-        );
-      document.querySelector(".author-photo-form__remove-button").classList.add("remove-button__remove-button-show");
-      uploadAuthorPhotoButton = document.getElementById("uploadAuthorPhotoButton");
-      uploadAuthorPhotoButton.innerHTML = 'Upload New';
-      uploadAuthorPhotoButton.classList.add("author-photo-form__upload-button-view");
-      document.querySelector(".upload-button__icon").classList.add("upload-button__icon-view");
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    }
-  
-    async function removeVisualAuthorPhoto() {
-      document.querySelector(".author-photo-form__remove-button").classList.remove("remove-button__remove-button-show");
-      uploadAuthorPhotoButton = document.getElementById("uploadAuthorPhotoButton");
-      uploadAuthorPhotoButton.innerHTML = 'Upload';
-      uploadAuthorPhotoButton.classList.remove("author-photo-form__upload-button-view");
-      document.querySelector(".upload-button__icon").classList.remove("upload-button__icon-view");
-      const previewPostCardAuthorPhoto = document.querySelector(".post-card-info__photo");
-      const previewInput = document.querySelector(".preview-author-photo");
-      defaultAuthorPhoto = '/static/img/author0.png';
-      previewPostCardAuthorPhoto.src = defaultAuthorPhoto;
-      previewInput.src = defaultAuthorPhoto;
-
-    }
-
-    async function updateVisualPostTinyPhoto() {
-      const previewPostCardPhoto = document.querySelector(".post-card__photo");
-      const previewInput = document.querySelector(".upload-place-tiny__img");
-      const file = document.querySelector(".input-hero-image-tiny__input").files[0];
-      const reader = new FileReader();
-      reader.addEventListener(
-        "load",
-        () => {
-          previewPostCardPhoto.src = reader.result;
-          previewInput.src = reader.result;
-          document.querySelector(".tiny-img-buttons").classList.add("tiny-img-buttons-show");
-          document.querySelector(".input-hero-image-tiny__sign").classList.add("input-hero-image-tiny__sign-remove");
-        },
-        false
-      );
-
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    }
-
-    async function removeVisualPostTinyPhoto() {
-      const defaultPostTinyIMG = "/static/img/postphototiny0.png";
-      const previewPostCardPhoto = document.querySelector(".post-card__photo");
-      const previewInput = document.querySelector(".upload-place-tiny__img");
-      previewPostCardPhoto.src = defaultPostTinyIMG;
-      previewInput.src = defaultPostTinyIMG;
-      document.querySelector(".tiny-img-buttons").classList.remove("tiny-img-buttons-show");
-      document.querySelector(".input-hero-image-tiny__sign").classList.remove("input-hero-image-tiny__sign-remove");
-    }
-
-    async function updateVisualPostPhoto() {
-      const previewPostCardPhoto = document.querySelector(".article-preview-post-visual__photo");
-      const previewInput = document.querySelector(".upload-place__img");
-      const file = document.querySelector(".input-hero-image__input").files[0];
-      const reader = new FileReader();
-      reader.addEventListener(
-        "load",
-        () => {
-          previewPostCardPhoto.src = reader.result;
-          previewInput.src = reader.result;
-          document.querySelector(".img-buttons").classList.add("img-buttons-show");
-          document.querySelector(".input-hero-image__sign").classList.add("input-hero-image__sign-remove");
-        },
-        false
-      );
-
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    }
-
-    async function removeVisualPostPhoto() {
-      const defaultPostIMG = "/static/img/postphoto0.png";
-      const previewPostCardPhoto = document.querySelector(".article-preview-post-visual__photo");
-      const previewInput = document.querySelector(".upload-place__img");
-      document.querySelector(".img-buttons").classList.remove("img-buttons-show");
-      document.querySelector(".input-hero-image__sign").classList.remove("input-hero-image__sign-remove");
-      previewPostCardPhoto.src = defaultPostIMG;
-      previewInput.src = defaultPostIMG;
-    }
-
-    // async function doFetch() {
-    //   const response = await fetch(window.location.href);
-    //   if (response.ok) {
-    //     let data = [];
-    //     data.push(document.getElementById('title').value);
-    //     data.push(document.getElementById('subtitle').value);
-    //     data.push(document.querySelector(".input-hero-image-tiny__input").files[0].name);
-    //     data.push(document.querySelector(".author-photo-form__input").files[0].name);
-    //     data.push(document.getElementById('authorName').value);
-    //     data.push(document.querySelector(".input-hero-image__input").files[0].name);
-    //     data.push(document.querySelector(".input-publish-date__note").value);
-
-    //     const json = await response.json();
-    //     console.log(json);
-    //   }
-    //     console.log("Ошибка HTTP" + response);
-    // }
-
-    // const submit = document.querySelector(".publish-button");
-    // submit.onclick = addEventListener("click", doFetch);
-  </script>
 </body>
 
 </html>

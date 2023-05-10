@@ -31,6 +31,7 @@ func main() {
 	mux.HandleFunc("/login", login(dbx))
 
 	mux.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
+	mux.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir("./js"))))
 
 	fmt.Println("Start server" + port)
 	err = http.ListenAndServe(port, mux)
