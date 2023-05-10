@@ -526,6 +526,7 @@ body
 }
 .article-preview
 {
+    position: relative;
     margin-right: 40px;
     margin-top: 110px;
     width: 100%;
@@ -620,8 +621,28 @@ body
     border-color: #F7F7F7;
 }
 
+.gorizontal-gradient-article-visual
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 42px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+}
+
+.vertical-gradient-article-visual
+{
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 119px;
+    height: 385px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 84.72%);
+}
+
 .post-card-preview
 {
+    position: relative;
     margin-right: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -735,11 +756,31 @@ body
     color: #999999;
 }
 
+.gorizontal-gradient-post-car-visual
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 72px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+}
+
+.vertical-gradient-post-card-visual
+{
+    position: absolute;
+    top: 20px;
+    right: 58px;
+    width: 119px;
+    height: 396px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 84.72%);
+}
+
 .post-article
 {
     width: 82%; 
     margin-top: 16px;
     margin-left: 9.02%;
+    padding-bottom: 58px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -750,6 +791,8 @@ body
 
 .post-article__title
 {
+    margin-top: 40px;
+    margin-left: 40px;
     font-family: 'Lora';
     font-style: normal;
     font-weight: 400;
@@ -758,3 +801,36 @@ body
     color: #000000;
 }
 
+.upload-post-article
+{
+    padding-left: 40px;
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-post-article__title
+{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: justify;
+    color: #7A7A7A;
+}
+
+.upload-post-article__input
+{
+    width: 940px;
+    height: 160px;
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px;
+    font-family: 'Oxygen';
+    font-size: 16px;
+    line-height: 24px;
+    text-align: start;
+    color: #000;
+}

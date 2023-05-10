@@ -95,7 +95,7 @@ func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 		postIDStr := mux.Vars(r)["postID"]
 		postID, err := strconv.Atoi(postIDStr)
 		if err != nil {
-			http.Error(w, "Invalid post id", 403)
+			http.Error(w, "Invalid post id", 404)
 			log.Println(err)
 			return
 		}

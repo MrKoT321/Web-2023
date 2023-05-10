@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	port         = ":8000"
+	port         = ":8080"
 	dbDriverName = "mysql"
 )
 
