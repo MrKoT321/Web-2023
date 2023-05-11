@@ -12,8 +12,12 @@ const removePostIMG = document.querySelector(".remove-hero");
 
 const publishButton = document.querySelector(".publish-button");
 
+let postImgInput;
+let authorIMGInput;
+let previewIMGInput;
+
 uploadTitle.addEventListener(
-  "change" , 
+  "input" , 
   () => {
     let title = document.getElementById('title').value;
     let defaultTitle = 'New Post';
@@ -29,7 +33,7 @@ uploadTitle.addEventListener(
 )
 
 uploadSubtitle.addEventListener(
-  "change",  
+  "input",  
   () => {
     let subtitle = document.getElementById('subtitle').value;
     let defaultSubtitle = 'Please, enter any description';
@@ -45,7 +49,7 @@ uploadSubtitle.addEventListener(
 )
 
 uploadAuthorName.addEventListener(
-  "change",   
+  "input",   
   () => {
     let name = document.getElementById('authorName').value;
     let defaultName = 'Enter author name';
@@ -59,7 +63,7 @@ uploadAuthorName.addEventListener(
 )
 
 uploadPublishDate.addEventListener(
-  "change", 
+  "input", 
   () => {
     let date = document.getElementById('date').value;
     let defaultDate = '01/05/2023';
@@ -73,7 +77,7 @@ uploadPublishDate.addEventListener(
 )
 
 uploadAuthorPhoto.addEventListener(
-  "change",  
+  "input",  
   () => {
     const previewPostCardAuthorPhoto = document.querySelector(".post-card-info__photo");
     const previewInput = document.querySelector(".preview-author-photo");
@@ -84,6 +88,7 @@ uploadAuthorPhoto.addEventListener(
         () => {
           previewPostCardAuthorPhoto.src = reader.result;
           previewInput.src = reader.result;
+          authorIMGInput = reader.result;
         },
         false
       );
@@ -116,7 +121,7 @@ removeAuthorPhoto.addEventListener(
 )
 
 uploadTinyPostIMG.addEventListener(
-  "change",
+  "input",
   () => {
     const previewPostCardPhoto = document.querySelector(".post-card__photo");
     const previewInput = document.querySelector(".upload-place-tiny__img");
@@ -127,6 +132,7 @@ uploadTinyPostIMG.addEventListener(
       () => {
         previewPostCardPhoto.src = reader.result;
         previewInput.src = reader.result;
+        previewIMGInput = reader.result;
         document.querySelector(".tiny-img-buttons").classList.add("tiny-img-buttons-show");
         document.querySelector(".input-hero-image-tiny__sign").classList.add("input-hero-image-tiny__sign-remove");
       },
@@ -153,7 +159,7 @@ removeTinyPostIMG.addEventListener(
 )
 
 uploadPostIMG.addEventListener(
-  "change",
+  "input",
   () => {
     const previewPostCardPhoto = document.querySelector(".article-preview-post-visual__photo");
     const previewInput = document.querySelector(".upload-place__img");
@@ -164,6 +170,7 @@ uploadPostIMG.addEventListener(
       () => {
         previewPostCardPhoto.src = reader.result;
         previewInput.src = reader.result;
+        postImgInput = reader.result;
         document.querySelector(".img-buttons").classList.add("img-buttons-show");
         document.querySelector(".input-hero-image__sign").classList.add("input-hero-image__sign-remove");
       },
@@ -192,39 +199,17 @@ removePostIMG.addEventListener(
 publishButton.addEventListener(
   "click",
   async () => {
-    const response = await fetch(window.location.href);
-    if (response.ok) {
-      const reader = new FileReader();
-      let titleInput = document.getElementById('title').value;
-      let subtitleInput = document.getElementById('subtitle').value;
-      let postImgInput = document.querySelector(".input-hero-image-tiny__input").files[0].name;
-      let authorNameInput = document.querySelector(".author-photo-form__input").files[0].name;
-      let authorIMGInput = document.getElementById('authorName').value;
-      let previewIMGInput = document.querySelector(".input-hero-image__input").files[0].name
-      let publishDateInput = document.querySelector(".input-publish-date__note").value;
+    const data = [
+      uploadTitle.value,
+      uploadSubtitle.value,
+      postImgInput, 
+      uploadAuthorName.value, 
+      authorIMGInput,
+      previewIMGInput,
+      uploadPublishDate.value,
+    ]
 
-      reader.addEventListener(
-        "load",
-        () => {
-            
-        },
-        false
-      );
-
-      let data = {
-        title: titleInput,
-        subtitle: subtitleInput,
-        postImg: postImgInput, 
-        authorName: authorNameInput, 
-        authorIMG: authorIMGInput,
-        previewIMG: previewIMGInput,
-        publishDate: publishDateInput,
-      }
-
-      let json = JSON.stringify(data);
-      console.log(json);
-    } else {
-      console.log("Ошибка HTTP" + response);
-    }    
-  }
+    const json = JSON.stringify(data);
+    console.log(json);
+  }    
 )

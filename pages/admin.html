@@ -20,16 +20,16 @@
       </div>
       <input type="submit" class="publish-button" value="Publish" />
     </div>
-    <form class="creating-post">
+    <div class="creating-post">
       <div class="creating-post-form">
         <span class="creating-post-form__title">Main Information</span>
         <div class="input-title">
           <span class="input-title__title">Title</span>
-          <input class="input-title__note" id="title" type="text" value="New Post" required />
+          <input class="input-title__note" id="title" type="text" placeholder="New Post" required />
         </div>
         <div class="input-subtitle">
           <span class="input-subtitle__title">Short description</span>
-          <input class="input-subtitle__note" id="subtitle" type="text" value="Please, enter any description" required />
+          <input class="input-subtitle__note" id="subtitle" type="text" placeholder="Please, enter any description" required />
         </div>
         <div class="input-author-name">
           <span class="input-author-name__title">Author name</span>
@@ -59,7 +59,7 @@
         </div>
         <div class="input-publish-date">
           <span class="input-publish-date__title">Publish Date</span>
-          <input class="input-publish-date__note" id="date" type="date" value="2023-05-01" required />
+          <input class="input-publish-date__note" id="date" type="date" required pattern="\d{4}-\d{2}-\d{2}" />
         </div>
         <div class="input-hero-image">
           <span class="input-hero-image__title">Hero Image</span>
@@ -142,7 +142,7 @@
           <div class="vertical-gradient-post-card-visual"></div>
         </div>
       </div>
-    </form>
+    </div>
     <div class="post-article">
       <span class="post-article__title">Content</span>
       <div class="upload-post-article">
@@ -154,6 +154,3 @@
 </body>
 
 </html>
-
-
-<!-- TODO: Добавить вывод в консоль json -->

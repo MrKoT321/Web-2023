@@ -1,14 +1,14 @@
 body 
 {
     margin: 0;
-    background: url("../img/loginimg.png") no-repeat;
+    background: url("/static/img/loginimg.png") no-repeat;
+    object-fit: fill;
     background-size: cover;
-    
 }
 
 .login
 {
-    margin: 120px 0;
+    padding: 120px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
