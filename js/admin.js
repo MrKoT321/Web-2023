@@ -198,16 +198,16 @@ removePostIMG.addEventListener(
 
 publishButton.addEventListener(
   "click",
-  async () => {
-    const data = [
-      uploadTitle.value,
-      uploadSubtitle.value,
-      postImgInput, 
-      uploadAuthorName.value, 
-      authorIMGInput,
-      previewIMGInput,
-      uploadPublishDate.value,
-    ]
+  () => {
+    const data = {
+      title: uploadTitle.value,
+      subtitle: uploadSubtitle.value,
+      postIMG: postImgInput, 
+      authorName: uploadAuthorName.value, 
+      authorIMG: authorIMGInput,
+      previewIMG: previewIMGInput,
+      publishDate: uploadPublishDate.value,
+    }
 
     const json = JSON.stringify(data);
     console.log(json);

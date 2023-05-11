@@ -29,6 +29,7 @@ func main() {
 	mux.HandleFunc("/post/{postID}", post(dbx))
 	mux.HandleFunc("/admin", admin(dbx))
 	mux.HandleFunc("/login", login(dbx))
+	mux.HandleFunc("/api/post", createPost(dbx)).Methods(http.MethodPost)
 
 	mux.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	mux.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir("./js"))))
@@ -41,5 +42,5 @@ func main() {
 }
 
 func openDB() (*sql.DB, error) {
-	return sql.Open(dbDriverName, "root:1234@tcp(localhost:3306)/blog?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true")
+	return sql.Open(dbDriverName, "root:P@ssw0rd@tcp(localhost:3306)/blog?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true")
 }

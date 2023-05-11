@@ -2,9 +2,13 @@ package main
 
 import (
 	"database/sql"
+	"encoding/base64"
+	"encoding/json"
 	"html/template"
+	"io"
 	"log"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/gorilla/mux"
@@ -21,7 +25,7 @@ type indexPageData struct {
 type postData struct {
 	Title    string `db:"title"`
 	Subtitle string `db:"subtitle"`
-	ImgURL   string `db:"img_url"`
+	ImgURL   string `db:"post_img"`
 	Content  string `db:"content"`
 }
 
@@ -31,6 +35,16 @@ type adminPageData struct {
 
 type loginPageData struct {
 	Title string
+}
+
+type createPostRequest struct {
+	Title       string `json:"title"`
+	Subtitle    string `json:"subtitle"`
+	PostIMG     string `json:"postIMG"`
+	Author      string `json:"authorName"`
+	AuthorIMG   string `json:"authorIMG"`
+	PreviewIMG  string `json:"previewIMG"`
+	PublishDate string `json:"publishDate"`
 }
 
 type featuredPostData struct {
@@ -48,7 +62,7 @@ type mostRecentPostData struct {
 	PostID         string `db:"post_id"`
 	Title          string `db:"title"`
 	Subtitle       string `db:"subtitle"`
-	ImgURL         string `db:"img_url"`
+	ImgURL         string `db:"preview_img"`
 	Author         string `db:"author"`
 	AuthorModifier string `db:"author_modifier"`
 	PublishDate    string `db:"publish_date"`
@@ -166,9 +180,11 @@ func login(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			log.Println(err)
 			return
 		}
+
 		data := loginPageData{
 			Title: "Login",
 		}
+
 		err = ts.Execute(w, data)
 		if err != nil {
 			http.Error(w, "Internal Server Error", 500)
@@ -215,7 +231,7 @@ func mostRecentPosts(db *sqlx.DB) ([]*mostRecentPostData, error) {
 		 	post_id,
 			title,
 			subtitle,
-			img_url,
+			preview_img,
 			author,
 			author_modifier,
 			publish_date
@@ -243,7 +259,7 @@ func postByID(db *sqlx.DB, postID int) (postData, error) {
 		SELECT
 			title,
 			subtitle,
-			img_url,
+			post_img,
 			content
 		FROM
 			post
@@ -259,4 +275,80 @@ func postByID(db *sqlx.DB, postID int) (postData, error) {
 	}
 
 	return post, nil
+}
+
+func createPost(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		reqData, err := io.ReadAll(r.Body)
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err)
+			return
+		}
+
+		var req createPostRequest
+
+		err = json.Unmarshal(reqData, &req)
+		if err != nil {
+			http.Error(w, "Internal Server Error", 403)
+			log.Println(err)
+			return
+		}
+
+		err = savePost(db, req)
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err)
+			return
+		}
+	}
+}
+
+func savePost(db *sqlx.DB, req createPostRequest) error {
+	const query = `
+       INSERT INTO
+           post
+       (
+           title,
+           subtitle,
+		   preview_img,
+		   post_img,
+		   author,
+		   author_modifier,
+		   publish_date
+       )
+       VALUES
+       (
+           ?,
+           ?,
+		   ?,
+		   ?,
+		   ?,
+		   ?,
+		   ?
+       )
+	`
+
+	decodedAuthorIMG, err := base64.StdEncoding.DecodeString(req.AuthorIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	file, err := os.Create("static/img/" + req.PostIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	_, err = file.Write(decodedAuthorIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	_, err = db.Exec(query, req.Title, req.Subtitle, req.PostIMG, req.Author, req.AuthorIMG, req.PreviewIMG, req.PublishDate)
+
+	return err
+
 }
