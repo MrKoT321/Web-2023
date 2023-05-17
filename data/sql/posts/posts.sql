@@ -18,7 +18,7 @@ VALUES (
 	'/static/img/image1.png',
 	'/static/img/image1.png',
     'Mat Vogels',
-    'author_Mat-Vogels',
+    '/static/img/face1.png',
 	'25/9/2015',
 	'
 Dark spruce forest frowned on either side the frozen waterway. The trees had been stripped by a recent wind of their white covering of frost, and they seemed to lean towards each other, black and ominous, in the fading light. A vast silence reigned over the land. The land itself was a desolation, lifeless, without movement, so lone and cold that the spirit of it was not even that of sadness. There was a hint in it of laughter, but of a laughter more terrible than any sadness—a laughter that was mirthless as the smile of the sphinx, a laughter cold as the frost and partaking of the grimness of infallibility. It was the masterful and incommunicable wisdom of eternity laughing at the futility of life and the effort of life. It was the Wild, the savage, frozen-hearted Northland Wild.
@@ -52,7 +52,7 @@ VALUES (
 	'/static/img/image1.png',
 	'/static/img/image1.png',
     'William Wong',
-    'author_William-Wong',
+    '/static/img/face2.png',
 	'25/9/2015',
 	'
 	From Top Down - A Journey to the Highest Peaks
@@ -88,7 +88,7 @@ VALUES (
     '/static/img/image3.jpg',
 	'/static/img/image3.jpg',
     'William Wong',
-    'author_William-Wong',
+    '/static/img/face1.png',
 	'25/9/2015',
 	'
 	As a traveler, I’ve been to many different places and have seen countless stunning sights. However, there’s one journey that always stands out in my mind - a trip to the Sequoia National Park in California.
@@ -124,7 +124,7 @@ VALUES (
     '/static/img/image4.png',
 	'/static/img/image4.png',
     'Mat Vogels',
-    'author_Mat-Vogels',
+    '/static/img/face1.png',
 	'25/9/2015',
 	'
 	Sunny Side Up - A Journey of Surprises and Delights
@@ -164,7 +164,7 @@ VALUES (
     '/static/img/image5.png',
 	'/static/img/image5.png',
     'Mat Vogels',
-    'author_Mat-Vogels',
+    '/static/img/face1.png',
 	'25/9/2015',
 	'
 	As a traveler, I have had the opportunity to explore some of the most beautiful natural wonders that this world has to offer, but nothing quite compares to the majestic beauty of waterfalls. There is something about the raw power and grace of water cascading down rock faces that leaves you in awe and wonder.
@@ -200,7 +200,7 @@ VALUES (
     '/static/img/image6.png',
 	'/static/img/image6.png',
     'William Wong',
-    'author_William-Wong',
+    '/static/img/face2.png',
 	'25/9/2015',
 	'
 	As a traveler, I have come to realize that one of the most mesmerizing experiences is watching the world awaken from behind a veil of mist. It is a unique moment when everything around you remains shrouded in mystery, and all you can hear are the sounds of nature, and all you can feel is the cool breeze on your skin. It`s a moment that reminds you of how tiny you are in this vast world and how there`s so much more to explore beyond your comfort zone.
@@ -238,7 +238,7 @@ VALUES (
     '/static/img/image7.png',
 	'/static/img/image7.png',
     'Mat Vogels',
-    'author_Mat-Vogels',
+    '/static/img/face1.png',
 	'25/9/2015',
 	'
 	As a traveler, I have always believed in the adage that not all those who wander are lost. The journey itself is as important as the destination. One of my favorite things about traveling is experiencing the world wake up around me. There`s something magical about being up early, watching the sun rise over a new place, seeing the locals begin their day, and feeling like you have the whole world to yourself.
@@ -276,7 +276,7 @@ VALUES (
     '/static/img/image8.png',
 	'/static/img/image8.png',
     'Mat Vogels',
-    'author_Mat-Vogels',
+    '/static/img/face1.png',
 	'25/9/2015',
 	'
 	Whenever I visit a new place, I make it a point to try something new. It could be trying out the local cuisine, indulging in an adventure sport or even just taking a different route back to my hotel. This philosophy of trying something new has never failed me and has always made my travels more memorable.

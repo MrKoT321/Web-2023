@@ -50,7 +50,10 @@
       <span class="most-recent-post__title">{{ .Title }}</span>
       <p class="most-recent-post__subtitle">{{ .Subtitle }}</p>
       <div class="most-recent-post-info">
-        <span class="most-recent-post-info__author {{ .AuthorModifier }}">{{ .Author }}</span>
+        <div class="author-info">
+          <img src="{{ .AuthorModifier }}" class="author-info__author-photo">
+          <span class="author-info__author">{{ .Author }}</span>
+        </div>
         <span class="most-recent-post-info__date">{{ .PublishDate }}</span>
       </div>
     </a>

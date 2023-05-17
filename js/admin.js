@@ -16,6 +16,10 @@ let postImgInput;
 let authorIMGInput;
 let previewIMGInput;
 
+let authorIMGInputName;
+let previewIMGInputName;
+let postImgInputName;
+
 uploadTitle.addEventListener(
   "input" , 
   () => {
@@ -88,7 +92,8 @@ uploadAuthorPhoto.addEventListener(
         () => {
           previewPostCardAuthorPhoto.src = reader.result;
           previewInput.src = reader.result;
-          authorIMGInput = reader.result;
+          authorIMGInput = reader.result.replace("data:", "").replace(/^.+,/, "");
+          authorIMGInputName = file.name;
         },
         false
       );
@@ -132,7 +137,8 @@ uploadTinyPostIMG.addEventListener(
       () => {
         previewPostCardPhoto.src = reader.result;
         previewInput.src = reader.result;
-        previewIMGInput = reader.result;
+        previewIMGInput = reader.result.replace("data:", "").replace(/^.+,/, "");
+        previewIMGInputName = file.name;
         document.querySelector(".tiny-img-buttons").classList.add("tiny-img-buttons-show");
         document.querySelector(".input-hero-image-tiny__sign").classList.add("input-hero-image-tiny__sign-remove");
       },
@@ -170,7 +176,8 @@ uploadPostIMG.addEventListener(
       () => {
         previewPostCardPhoto.src = reader.result;
         previewInput.src = reader.result;
-        postImgInput = reader.result;
+        postImgInput = reader.result.replace("data:", "").replace(/^.+,/, "");
+        postImgInputName = file.name;
         document.querySelector(".img-buttons").classList.add("img-buttons-show");
         document.querySelector(".input-hero-image__sign").classList.add("input-hero-image__sign-remove");
       },
@@ -203,13 +210,30 @@ publishButton.addEventListener(
       title: uploadTitle.value,
       subtitle: uploadSubtitle.value,
       postIMG: postImgInput, 
+      postIMGName: postImgInputName, 
       authorName: uploadAuthorName.value, 
       authorIMG: authorIMGInput,
+      authorIMGName: authorIMGInputName,
       previewIMG: previewIMGInput,
+      previewIMGName: previewIMGInputName,
       publishDate: uploadPublishDate.value,
+      content: document.querySelector(".upload-post-article__input").value,
     }
 
-    const json = JSON.stringify(data);
-    console.log(json);
+    doFecth(data);
   }    
 )
+
+
+async function doFecth(data) {
+  const response = await fetch("/api/post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    body: JSON.stringify(data, null, "\t")
+  });
+  if (!response.ok) {
+    alert("Ошибка HTTP: " + response.status);
+  }
+}

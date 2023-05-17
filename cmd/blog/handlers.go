@@ -41,10 +41,14 @@ type createPostRequest struct {
 	Title       string `json:"title"`
 	Subtitle    string `json:"subtitle"`
 	PostIMG     string `json:"postIMG"`
+	PostName    string `json:"postIMGName"`
 	Author      string `json:"authorName"`
 	AuthorIMG   string `json:"authorIMG"`
+	AuthorName  string `json:"authorIMGName"`
 	PreviewIMG  string `json:"previewIMG"`
+	PreviewName string `json:"previewIMGName"`
 	PublishDate string `json:"publishDate"`
+	Content     string `json:"content"`
 }
 
 type featuredPostData struct {
@@ -290,7 +294,7 @@ func createPost(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 
 		err = json.Unmarshal(reqData, &req)
 		if err != nil {
-			http.Error(w, "Internal Server Error", 403)
+			http.Error(w, "Internal Server Error", 500)
 			log.Println(err)
 			return
 		}
@@ -301,13 +305,14 @@ func createPost(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			log.Println(err)
 			return
 		}
+
+		log.Println("I save post")
 	}
 }
 
 func savePost(db *sqlx.DB, req createPostRequest) error {
 	const query = `
-       INSERT INTO
-           post
+       INSERT INTO post
        (
            title,
            subtitle,
@@ -315,12 +320,14 @@ func savePost(db *sqlx.DB, req createPostRequest) error {
 		   post_img,
 		   author,
 		   author_modifier,
-		   publish_date
+		   publish_date,
+		   content
        )
        VALUES
        (
            ?,
            ?,
+		   ?,
 		   ?,
 		   ?,
 		   ?,
@@ -335,19 +342,55 @@ func savePost(db *sqlx.DB, req createPostRequest) error {
 		return err
 	}
 
-	file, err := os.Create("static/img/" + req.PostIMG)
+	fileAuthorIMG, err := os.Create("static/img/" + req.AuthorName)
 	if err != nil {
 		log.Println(err)
 		return err
 	}
 
-	_, err = file.Write(decodedAuthorIMG)
+	_, err = fileAuthorIMG.Write(decodedAuthorIMG)
 	if err != nil {
 		log.Println(err)
 		return err
 	}
 
-	_, err = db.Exec(query, req.Title, req.Subtitle, req.PostIMG, req.Author, req.AuthorIMG, req.PreviewIMG, req.PublishDate)
+	decodedPostIMG, err := base64.StdEncoding.DecodeString(req.PostIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	filePostIMG, err := os.Create("static/img/" + req.PostName)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	_, err = filePostIMG.Write(decodedPostIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	decodedPreviewIMG, err := base64.StdEncoding.DecodeString(req.PreviewIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	filePreviewIMG, err := os.Create("static/img/" + req.PreviewName)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	_, err = filePreviewIMG.Write(decodedPreviewIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
+	_, err = db.Exec(query, req.Title, req.Subtitle, "static/img/"+req.PreviewName, "static/img/"+req.PostName, req.Author, "static/img/"+req.AuthorName, req.PublishDate, req.Content)
 
 	return err
 

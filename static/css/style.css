@@ -294,9 +294,15 @@ a
     color: rgba(153, 153, 153, 1);
 }
 
-.most-recent-post-info__author
+.author-info-info__author-photo
 {
-    padding-left: 36px; 
+    margin-left: 13px;
+    border-radius: 60px;    
+}
+
+.author-info-info__author
+{
+    margin-left: 10px; 
     text-align: center;
     vertical-align: middle;
     font-size: 11px;
@@ -305,6 +311,7 @@ a
 .most-recent-post-info__date
 {
     font-size: 12px;     
+
 }
 
 /* site footer */

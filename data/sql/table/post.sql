@@ -9,7 +9,7 @@ CREATE TABLE post (
     `author_modifier` VARCHAR(255) NOT NULL,
     `publish_date` VARCHAR(255) NOT NULL,
     `content` TEXT NOT NULL,
-    `featured` TINYINT(1),
+    `featured` TINYINT(1) DEFAULT 0,
     PRIMARY KEY (`post_id`)
 ) ENGINE = InnoDB 
 CHARACTER SET = utf8mb4 
