@@ -258,14 +258,17 @@ a
     font-weight: 400;
 }
 
-.most-cecent-post__img
+.most-recent-post__img
 {
+    width: 296px;
+    height: 150px;
     border-radius: 0;
 }
 
 .most-recent-post__title
 {
-    margin: 14px 4.39% 0;
+    width: 270px;
+    margin: 14px 0 0 13px;
     text-decoration: none; 
     font-family: 'Lora';
     font-size: 20px;
@@ -276,31 +279,43 @@ a
 .most-recent-post__subtitle
 {  
     height: 40px;
-    margin: 6px 10.81% 0px 4.39%;
+    margin: 6px 13px 0 ;
+    width: 270px;
     font-size: 13px;
     line-height: 19px;
     color: rgba(122, 122, 122, 1);
+    word-wrap: break-word;
 }
 
 .most-recent-post-info
 {
+    width: 296px;
     height: 53px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 7px 13px 0px 13px;
+    margin-top: 7px;
     background-color: #FCFCFC;
     line-height: 35px;   
     color: rgba(153, 153, 153, 1);
 }
 
-.author-info-info__author-photo
+.author-info
 {
-    margin-left: 13px;
-    border-radius: 60px;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.author-info-info__author
+.author-info__author-photo
+{
+    width: 28px;
+    height: 28px;
+    border-radius: 60px;  
+    margin-left: 13px;  
+}
+
+.author-info__author
 {
     margin-left: 10px; 
     text-align: center;
@@ -311,7 +326,7 @@ a
 .most-recent-post-info__date
 {
     font-size: 12px;     
-
+    margin-right: 13px;
 }
 
 /* site footer */

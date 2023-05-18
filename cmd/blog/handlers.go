@@ -306,11 +306,28 @@ func createPost(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		log.Println("I save post")
+		log.Println("Save post request completed successfully")
 	}
 }
 
 func savePost(db *sqlx.DB, req createPostRequest) error {
+	
+	authorImgName, err := makeImg(req.AuthorName, req.AuthorIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+	postImgName, err := makeImg(req.PostName, req.PostIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+	previewImgName, err := makeImg(req.PreviewName, req.PreviewIMG)
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+
 	const query = `
        INSERT INTO post
        (
@@ -336,62 +353,29 @@ func savePost(db *sqlx.DB, req createPostRequest) error {
        )
 	`
 
-	decodedAuthorIMG, err := base64.StdEncoding.DecodeString(req.AuthorIMG)
+	_, err = db.Exec(query, req.Title, req.Subtitle, previewImgName, postImgName, req.Author, authorImgName, req.PublishDate, req.Content)
+
+	return err
+
+}
+
+func makeImg(string imgName, string imgContent) (string, err) {
+	decodedAuthorIMG, err := base64.StdEncoding.DecodeString(imgContent)
 	if err != nil {
 		log.Println(err)
-		return err
+		return "", err
 	}
 
-	fileAuthorIMG, err := os.Create("static/img/" + req.AuthorName)
+	fileAuthorIMG, err := os.Create("static/img/" + imgName)
 	if err != nil {
 		log.Println(err)
-		return err
+		return "", err
 	}
 
 	_, err = fileAuthorIMG.Write(decodedAuthorIMG)
 	if err != nil {
 		log.Println(err)
-		return err
+		return "", err
 	}
-
-	decodedPostIMG, err := base64.StdEncoding.DecodeString(req.PostIMG)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-
-	filePostIMG, err := os.Create("static/img/" + req.PostName)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-
-	_, err = filePostIMG.Write(decodedPostIMG)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-
-	decodedPreviewIMG, err := base64.StdEncoding.DecodeString(req.PreviewIMG)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-
-	filePreviewIMG, err := os.Create("static/img/" + req.PreviewName)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-
-	_, err = filePreviewIMG.Write(decodedPreviewIMG)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-
-	_, err = db.Exec(query, req.Title, req.Subtitle, "static/img/"+req.PreviewName, "static/img/"+req.PostName, req.Author, "static/img/"+req.AuthorName, req.PublishDate, req.Content)
-
-	return err
-
+	return "static/img/" + imgName, err
 }

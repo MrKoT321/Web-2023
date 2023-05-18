@@ -36,7 +36,10 @@
       <span class="feautured-post__title">{{ .Title }}</span>
       <p class="feautured-post__subtitle">{{ .Subtitle }}</p>
       <div class="feautured-post-info">
-        <span class="feautured-post-info__author {{ .AuthorModifier }}">{{ .Author }}</span>
+        <div class="author-info">
+          <img src="{{ .AuthorModifier }}" class="author-info__author-photo" />
+          <span class="author-info__author">{{ .Author }}</span>
+       </div>
         <span class="feautured-post-info__date">{{ .PublishDate }}</span>
       </div>
     </a>
@@ -46,7 +49,7 @@
     <h2 class="most-recent-posts__title">Most Recent</h2>
     {{ range .MostRecentPosts }}
     <a href="{{ .PostURL }}" class="most-recent-post">
-      <img src="{{ .ImgURL }}" class="most-cecent-post__img">
+      <img src="{{ .ImgURL }}" class="most-recent-post__img">
       <span class="most-recent-post__title">{{ .Title }}</span>
       <p class="most-recent-post__subtitle">{{ .Subtitle }}</p>
       <div class="most-recent-post-info">

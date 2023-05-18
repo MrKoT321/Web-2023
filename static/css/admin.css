@@ -706,6 +706,8 @@ body
 
 .article-preview-post-visual__subtitle
 {
+    padding: 0 10px;
+    width: 400px;
     margin-top: 4px;
     font-family: 'Oxygen';
     font-size: 10.2px;

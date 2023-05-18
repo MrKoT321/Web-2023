@@ -25,7 +25,7 @@ uploadTitle.addEventListener(
   () => {
     let title = document.getElementById('title').value;
     let defaultTitle = 'New Post';
-    if (title !== '' && title.length < 25) {
+    if (title !== '') {
       document.getElementById('titleVisual').innerHTML = title;
       document.getElementById('titleVisualTiny').innerHTML = title;
     }
@@ -41,7 +41,7 @@ uploadSubtitle.addEventListener(
   () => {
     let subtitle = document.getElementById('subtitle').value;
     let defaultSubtitle = 'Please, enter any description';
-    if (subtitle !== '' && subtitle.length < 60){
+    if (subtitle !== ''){
       document.getElementById('subtitleVisual').innerHTML = subtitle;
       document.getElementById('subtitleVisualTiny').innerHTML = subtitle;
     } 
@@ -57,7 +57,7 @@ uploadAuthorName.addEventListener(
   () => {
     let name = document.getElementById('authorName').value;
     let defaultName = 'Enter author name';
-    if (name !== '' && name.length < 25){
+    if (name !== ''){
       document.getElementById('authorNameVisualTiny').innerHTML = name;
     }    
     else {
@@ -219,7 +219,7 @@ publishButton.addEventListener(
       publishDate: uploadPublishDate.value,
       content: document.querySelector(".upload-post-article__input").value,
     }
-
+    console.log(JSON.stringify(data, null, "\t"));
     doFecth(data);
   }    
 )
