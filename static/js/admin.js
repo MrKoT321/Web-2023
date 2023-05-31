@@ -10,7 +10,18 @@ const removeAuthorPhoto = document.querySelector(".author-photo-form__remove-but
 const removeTinyPostIMG = document.querySelector(".remove-tiny-hero");
 const removePostIMG = document.querySelector(".remove-hero");
 
+const succsesFormMessage = document.querySelector(".form-filled-correctly");
+const invalidFormMessage = document.querySelector(".form-filled-incorrectly");
+
 const publishButton = document.querySelector(".publish-button");
+
+const titleError = document.querySelector(".input-title__error");
+const subtitleError = document.querySelector(".input-subtitle__error");
+const authorNameError = document.querySelector(".input-author-name__error");
+const authorPhotoError = document.querySelector(".input-author-photo__error");
+const publishDateError = document.querySelector(".input-publish-date__error");
+const postImgError = document.querySelector(".input-hero-image__error");
+const previewImgError = document.querySelector(".input-hero-image-tiny__error");
 
 let postImgInput;
 let authorIMGInput;
@@ -23,7 +34,7 @@ let postImgInputName;
 uploadTitle.addEventListener(
   "input" , 
   () => {
-    let title = document.getElementById('title').value;
+    let title = uploadTitle.value;
     let defaultTitle = 'New Post';
     if (title !== '') {
       document.getElementById('titleVisual').innerHTML = title;
@@ -111,6 +122,7 @@ uploadAuthorPhoto.addEventListener(
 removeAuthorPhoto.addEventListener(
   "click",
   () => {
+    uploadAuthorPhoto.value = null;
     document.querySelector(".author-photo-form__remove-button").classList.remove("remove-button__remove-button-show");
     uploadAuthorPhotoButton = document.getElementById("uploadAuthorPhotoButton");
     uploadAuthorPhotoButton.innerHTML = 'Upload';
@@ -154,6 +166,7 @@ uploadTinyPostIMG.addEventListener(
 removeTinyPostIMG.addEventListener(
   "click",
   () => {
+    uploadTinyPostIMG.value = null;
     const defaultPostTinyIMG = "/static/img/postphototiny0.png";
     const previewPostCardPhoto = document.querySelector(".post-card__photo");
     const previewInput = document.querySelector(".upload-place-tiny__img");
@@ -193,6 +206,7 @@ uploadPostIMG.addEventListener(
 removePostIMG.addEventListener(
   "click",
   () => {
+    uploadPostIMG.value = null;
     const defaultPostIMG = "/static/img/postphoto0.png";
     const previewPostCardPhoto = document.querySelector(".article-preview-post-visual__photo");
     const previewInput = document.querySelector(".upload-place__img");
@@ -203,27 +217,102 @@ removePostIMG.addEventListener(
   }
 )
 
+function CheckValidInputs() {
+  succsesFormMessage.classList.add("form-filled-correctly-hidden");
+  succsesFormMessage.classList.add("form-filled-incorrectly-hidden");
+  for (_ of succsesFormMessage.children) {
+    _.classList.add("hidden");
+  } 
+  for (_ of succsesFormMessage.children) {
+    _.classList.add("hidden");
+  }
+  let textInputValid = "1px solid #2E2E2E";
+  let textInputInvalid = "1px solid #E86961";
+  uploadTitle.classList.remove("text-input-error");
+  uploadSubtitle.classList.remove("text-input-error", "text-input-error");
+  uploadAuthorName.classList.remove("text-input-error", "text-input-error");
+  uploadPublishDate.classList.remove("text-input-error", "text-input-error");
+  uploadAuthorPhoto.classList.remove("photo-input-error");
+  uploadPostIMG.classList.remove("photo-input-error");
+  uploadTinyPostIMG.classList.remove("photo-input-error");
+
+  titleError.classList.add("hidden");
+  subtitleError.classList.add("hidden");
+  authorNameError.classList.add("hidden");
+  authorPhotoError.classList.add("hidden");
+  publishDateError.classList.add("hidden");
+  postImgError.classList.add("hidden");
+  previewImgError.classList.add("hidden");
+  let formError = false;
+  if (uploadTitle.value === "") {
+    titleError.classList.remove("hidden");
+    uploadTitle.style.borderBottom = textInputInvalid;
+    formError = true;
+  } else { uploadTitle.style.borderBottom = textInputValid }
+  if (uploadSubtitle.value === "") {
+    subtitleError.classList.remove("hidden");
+    uploadSubtitle.style.borderBottom = textInputInvalid;
+    formError = true;
+  } else { uploadSubtitle.style.borderBottom = textInputValid }
+  if (uploadAuthorName.value === "") {
+    authorNameError.classList.remove("hidden");
+    uploadAuthorName.style.borderBottom = textInputInvalid;
+    formError = true;
+  } else { uploadAuthorName.style.borderBottom = textInputValid }
+  if (uploadPublishDate.value === "") {
+    publishDateError.classList.remove("hidden");
+    uploadPublishDate.style.borderBottom = textInputInvalid;
+    formError = true;
+  } else { uploadPublishDate.style.borderBottom = textInputValid }
+  if (!uploadAuthorPhoto.files[0]) {
+    authorPhotoError.classList.remove("hidden");
+    formError = true;
+  }
+  if (!uploadPostIMG.files[0]) {
+    postImgError.classList.remove("hidden");
+    formError = true;
+  }
+  if (!uploadTinyPostIMG.files[0]) {
+    previewImgError.classList.remove("hidden");
+    formError = true;
+  }
+  if (formError) {
+    invalidFormMessage.classList.remove("form-filled-incorrectly-hidden");
+    for (_ of invalidFormMessage.children) {
+      _.classList.remove("hidden");
+    }
+  } else {
+    succsesFormMessage.classList.remove("form-filled-correctly-hidden");
+    for (_ of invalidFormMessage.children) {
+      _.classList.rempve("hidden");
+    }
+  }
+  return formError
+}
+
 publishButton.addEventListener(
   "click",
   () => {
-    const data = {
-      title: uploadTitle.value,
-      subtitle: uploadSubtitle.value,
-      postIMG: postImgInput, 
-      postIMGName: postImgInputName, 
-      authorName: uploadAuthorName.value, 
-      authorIMG: authorIMGInput,
-      authorIMGName: authorIMGInputName,
-      previewIMG: previewIMGInput,
-      previewIMGName: previewIMGInputName,
-      publishDate: uploadPublishDate.value,
-      content: document.querySelector(".upload-post-article__input").value,
+    if (!CheckValidInputs()){
+      const data = {
+        title: uploadTitle.value,
+        subtitle: uploadSubtitle.value,
+        postIMG: postImgInput, 
+        postIMGName: postImgInputName, 
+        authorName: uploadAuthorName.value, 
+        authorIMG: authorIMGInput,
+        authorIMGName: authorIMGInputName,
+        previewIMG: previewIMGInput,
+        previewIMGName: previewIMGInputName,
+        publishDate: uploadPublishDate.value,
+        content: document.querySelector(".upload-post-article__input").value,
+      }
+      console.log(JSON.stringify(data, null, "\t"));
+      doFecth(data);
     }
-    console.log(JSON.stringify(data, null, "\t"));
-    doFecth(data);
+    
   }    
 )
-
 
 async function doFecth(data) {
   const response = await fetch("/api/post", {

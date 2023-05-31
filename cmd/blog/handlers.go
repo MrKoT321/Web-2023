@@ -311,7 +311,7 @@ func createPost(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 }
 
 func savePost(db *sqlx.DB, req createPostRequest) error {
-	
+
 	authorImgName, err := makeImg(req.AuthorName, req.AuthorIMG)
 	if err != nil {
 		log.Println(err)
@@ -359,7 +359,7 @@ func savePost(db *sqlx.DB, req createPostRequest) error {
 
 }
 
-func makeImg(string imgName, string imgContent) (string, err) {
+func makeImg(imgName string, imgContent string) (string, error) {
 	decodedAuthorIMG, err := base64.StdEncoding.DecodeString(imgContent)
 	if err != nil {
 		log.Println(err)
