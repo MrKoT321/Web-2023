@@ -16,11 +16,20 @@
       </div>
       <span class="intro__subtitle">Log in to start creating</span>
     </div>
-    <form class="login-form">
+    <div class="login-form">
       <span class="login-form__title">Log In</span>
+      <div class="form-filled-incorrectly form-filled-incorrectly-hidden">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="form-filled-incorrectly__sign hidden">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#E86961" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8V12" stroke="#E86961" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 16H12.01" stroke="#E86961" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        <span class="form-filled-incorrectly__info hidden">A-ah! Check all fields.</span> 
+      </div>
       <div class="login-form-email">
         <span class="login-form-email__label">Email</span>
         <input type="text" class="login-form-email__input" required />
+        <span class="login-form-email__error hidden">Email is required</span>
       </div>
       <div class="login-form-password">
         <span class="login-form-password__label">Password</span>            
@@ -39,10 +48,11 @@
               <rect width="24" height="24" fill="white"/>
               </clipPath>
               </defs>
-              </svg>              
+              </svg> 
+        <span class="login-form-password__error hidden">Password is required</span>             
       </div>
-      <input class="login-form-button" type="submit" value="Log In" />
-    </form>
+      <button class="login-form-button">Log In</button>
+    </div>
    </div>
 </body>
 

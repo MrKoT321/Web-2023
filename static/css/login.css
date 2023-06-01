@@ -39,7 +39,6 @@ body
     font-size: 45.5px;
     line-height: 46px;
     color: #FFFFFF;
-    
 }
 
 .intro-title__subtitle
@@ -76,11 +75,49 @@ body
     font-family: 'Lora';
     font-size: 34px;
     line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.form-filled-incorrectly
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 82%;
+    min-height: 44px;
+    box-sizing: border-box;
+    margin: 0 9% 16px;
+    background: #FFEBEA;
+    border-left: 2px solid #E86961;
+    border-radius: 5px;
+    transition: min-height 0.3s linear, 
+                margin 0.3s linear;
+}
+
+.form-filled-incorrectly__sign
+{
+    margin-left: 14px;
+}
+
+.form-filled-incorrectly__info
+{
+    font-family: 'Oxygen';
+    font-size: 14px;
+    line-height: 20px;
+    color: #2E2E2E;
+}
+
+.form-filled-incorrectly-hidden
+{
+    margin: 0 9%;
+    min-height: 0;
+    transition: min-height 0.3s linear, 
+                margin 0.3s linear;
 }
 
 .login-form-email
 {
-    margin: 50px 40px 0;
+    margin: 20px 40px 0;
     display: flex;
     flex-direction: column;
 }
@@ -134,6 +171,14 @@ body
     border-radius: 5px 5px 0 0;
 }
 
+.login-form-email__error
+{
+    margin-top: 5px;
+    font-family: 'Oxygen';
+    font-size: 12px;
+    line-height: 16px;
+    color: #E86961;
+}
 
 .login-form-password
 {
@@ -219,6 +264,15 @@ body
     display: flex;
 }
 
+.login-form-password__error
+{
+    margin-top: 5px;
+    font-family: 'Oxygen';
+    font-size: 12px;
+    line-height: 16px;
+    color: #E86961;
+}
+
 .login-form-button
 {
     margin: 40px;
@@ -233,4 +287,9 @@ body
     line-height: 24px;
     color: #FFFFFF;
     cursor: pointer;
+}
+
+.hidden 
+{
+    display: none;
 }

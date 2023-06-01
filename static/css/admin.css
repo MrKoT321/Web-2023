@@ -423,19 +423,13 @@ body
 .upload-button__icon
 {
     position: absolute;
-    display: none;
-    left: 6px;
-}
-
-.upload-button__icon-view
-{
     display: flex;
+    left: 6px;
 }
 
 .author-photo-form__input
 {
     display: none;
-    width: 1px;
 }
 
 .author-photo-form__remove-button
@@ -447,7 +441,7 @@ body
     height: 24px;
     border: none;
     outline: none;
-    display: none;
+    display: flex;
     background-color: rgba(255, 255, 255, 1);
     font-family: 'Oxygen';
     font-size: 16px;
@@ -461,11 +455,6 @@ body
 {
     position: absolute;
     left: -27px;
-}
-
-.remove-button__remove-button-show
-{
-    display: flex;
 }
 
 .input-author-photo__error
@@ -597,22 +586,12 @@ body
     color: #999999;
 }
 
-.input-hero-image__sign-remove
-{
-    display: none;
-}
-
 .img-buttons
 {
-    display: none;
+    display: flex;
     align-items: center;
     width: 100%;
-}
-
-.img-buttons-show
-{
     margin-top: 12px;
-    display: flex;
 }
 
 .upload-hero
@@ -714,22 +693,12 @@ body
     color: #999999;
 }
 
-.input-hero-image-tiny__sign-remove
-{
-    display: none;
-}
-
 .tiny-img-buttons
-{
-    display: none;
-    align-items: center;
-    width: 100%;
-}
-
-.tiny-img-buttons-show
 {
     margin-top: 12px;
     display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .remove-tiny-hero
@@ -859,8 +828,6 @@ body
     margin-top: 36px;
     width: 100%;
     height: 160px;
-    background: #F7F7F7;
-    border-color: #F7F7F7;
 }
 
 .gorizontal-gradient-article-visual
@@ -934,7 +901,6 @@ body
 {
     width: 100%;
     height: 150px;
-    background: #F7F7F7;
 }
 
 .post-card__title
@@ -972,7 +938,6 @@ body
     width: 26px;
     height: 26px;
     margin-left: 13px;
-    background: linear-gradient(0deg, #F7F7F7, #F7F7F7);
     border-radius: 60px;
 }
 
@@ -1075,6 +1040,15 @@ body
     line-height: 24px;  
     color: #000;
     resize: none;
+}
+
+.upload-post-article__error
+{
+    margin-top: 5px;
+    font-family: 'Oxygen';
+    font-size: 12px;
+    line-height: 16px;
+    color: #E86961;
 }
 
 .hidden
